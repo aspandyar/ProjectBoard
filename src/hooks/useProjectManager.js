@@ -5,12 +5,16 @@ import { useProjectContext, ActionTypes } from '../context/ProjectContext';
 /**
  * Custom Hook that encapsulates all business logic for project/task management
  * This keeps presentational components "dumb" and separates logic from presentation
+ * 
+ * IMPORTANT: All state changes MUST go through the dispatch function from useReducer.
+ * This hook uses dispatch to trigger state mutations in the reducer.
  */
 export function useProjectManager() {
   const { state, dispatch } = useProjectContext();
 
   /**
    * Add a new task to a specific project/column
+   * Uses dispatch from useReducer to update state immutably
    * @param {string} projectId - The ID of the project/column
    * @param {string} title - The task title
    * @param {string} description - The task description (optional)
@@ -26,6 +30,7 @@ export function useProjectManager() {
       description: description.trim(),
     };
 
+    // All state changes go through dispatch (useReducer)
     dispatch({
       type: ActionTypes.ADD_TASK,
       payload: {
@@ -37,10 +42,12 @@ export function useProjectManager() {
 
   /**
    * Delete a task from a specific project/column
+   * Uses dispatch from useReducer to update state immutably
    * @param {string} projectId - The ID of the project/column
    * @param {string} taskId - The ID of the task to delete
    */
   const deleteTask = (projectId, taskId) => {
+    // All state changes go through dispatch (useReducer)
     dispatch({
       type: ActionTypes.DELETE_TASK,
       payload: {
@@ -52,6 +59,7 @@ export function useProjectManager() {
 
   /**
    * Move a task from one project/column to another
+   * Uses dispatch from useReducer to update state immutably
    * @param {string} sourceProjectId - The ID of the source project/column
    * @param {string} targetProjectId - The ID of the target project/column
    * @param {string} taskId - The ID of the task to move
@@ -61,6 +69,7 @@ export function useProjectManager() {
       return; // No need to move if same column
     }
 
+    // All state changes go through dispatch (useReducer)
     dispatch({
       type: ActionTypes.MOVE_TASK,
       payload: {
