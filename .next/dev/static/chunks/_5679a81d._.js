@@ -263,11 +263,11 @@ var _s = __turbopack_context__.k.signature();
 function useProjectManager() {
     _s();
     const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(18);
-    if ($[0] !== "a4e883123cccde2caa009ef0bc92aa21a23199b9ffddc675f86d7bfadde9f902") {
+    if ($[0] !== "81f2a2ed6874b7de06892a89eecff7a48adc0ed00f0c6950256c91a12d10bc74") {
         for(let $i = 0; $i < 18; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "a4e883123cccde2caa009ef0bc92aa21a23199b9ffddc675f86d7bfadde9f902";
+        $[0] = "81f2a2ed6874b7de06892a89eecff7a48adc0ed00f0c6950256c91a12d10bc74";
     }
     const { state, dispatch } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$context$2f$ProjectContext$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useProjectContext"])();
     let t0;
@@ -1076,11 +1076,11 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 ;
 function Footer() {
     const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(2);
-    if ($[0] !== "a360b8b7683599c6f2fa6cd5ea28b28dcf86f1dee0684b0dfb5cf089f88b4d04") {
+    if ($[0] !== "dd04181d09d8fbc773161952c3833cde75f0ff80a428fb9731d9df8888856fb6") {
         for(let $i = 0; $i < 2; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "a360b8b7683599c6f2fa6cd5ea28b28dcf86f1dee0684b0dfb5cf089f88b4d04";
+        $[0] = "dd04181d09d8fbc773161952c3833cde75f0ff80a428fb9731d9df8888856fb6";
     }
     let t0;
     if ($[1] === Symbol.for("react.memo_cache_sentinel")) {
@@ -1092,7 +1092,7 @@ function Footer() {
                     className: "text-center text-sm text-zinc-600 dark:text-zinc-400",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            children: "© 2024 Project Board. Built with React, Context API, and useReducer."
+                            children: "© 2025 Project Board. Built with React."
                         }, void 0, false, {
                             fileName: "[project]/src/components/Footer.js",
                             lineNumber: 17,
@@ -1100,11 +1100,11 @@ function Footer() {
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                             className: "mt-2",
-                            children: "Drag and drop tasks between columns to move them."
+                            children: "Aspandyar Sharip"
                         }, void 0, false, {
                             fileName: "[project]/src/components/Footer.js",
                             lineNumber: 17,
-                            columnNumber: 300
+                            columnNumber: 271
                         }, this)
                     ]
                 }, void 0, true, {

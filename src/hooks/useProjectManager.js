@@ -5,9 +5,6 @@ import { useProjectContext, ActionTypes } from '../context/ProjectContext';
 /**
  * Custom Hook that encapsulates all business logic for project/task management
  * This keeps presentational components "dumb" and separates logic from presentation
- * 
- * IMPORTANT: All state changes MUST go through the dispatch function from useReducer.
- * This hook uses dispatch to trigger state mutations in the reducer.
  */
 export function useProjectManager() {
   const { state, dispatch } = useProjectContext();

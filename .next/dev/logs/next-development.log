@@ -9690,3 +9690,7 @@ Check the render method of `App`.
 [04:44:42.657] Server  LOG      ✓ Compiled in 18ms
 [04:44:43.564] Server  LOG      ✓ Compiled in 34ms
 [04:44:44.777] Server  LOG      ✓ Compiled in 34ms
+[04:45:32.913] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[04:47:45.740] Server  LOG      ✓ Compiled in 54ms
+[04:48:53.538] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[07:11:47.434] Server  LOG      ✓ Compiled in 117ms
