@@ -1,18 +1,45 @@
 'use client';
 
+import { useState } from 'react';
+
 /**
  * Task Component - Displays an individual task
  * This is a presentational component that receives props and calls callbacks
  */
-export default function Task({ task, onDelete, projectId }) {
+export default function Task({ task, onDelete, projectId, onDragStart, onDragEnd, isDragging }) {
+  const [isDraggedOver, setIsDraggedOver] = useState(false);
+
   const handleDelete = () => {
     if (window.confirm(`Are you sure you want to delete "${task.title}"?`)) {
       onDelete(projectId, task.id);
     }
   };
 
+  const handleDragStart = (e) => {
+    e.dataTransfer.effectAllowed = 'move';
+    e.dataTransfer.setData('text/plain', JSON.stringify({ taskId: task.id, projectId }));
+    onDragStart && onDragStart(task.id);
+  };
+
+  const handleDragEnd = () => {
+    onDragEnd && onDragEnd();
+    setIsDraggedOver(false);
+  };
+
   return (
-    <div className="bg-white dark:bg-zinc-800 rounded-lg shadow-sm border border-zinc-200 dark:border-zinc-700 p-4 mb-3 hover:shadow-md transition-shadow">
+    <div
+      draggable
+      onDragStart={handleDragStart}
+      onDragEnd={handleDragEnd}
+      onDragOver={(e) => {
+        e.preventDefault();
+        setIsDraggedOver(true);
+      }}
+      onDragLeave={() => setIsDraggedOver(false)}
+      className={`bg-white dark:bg-zinc-800 rounded-lg shadow-sm border border-zinc-200 dark:border-zinc-700 p-4 mb-3 transition-all cursor-move ${
+        isDragging ? 'opacity-50 scale-95' : ''
+      } ${isDraggedOver ? 'ring-2 ring-blue-500' : 'hover:shadow-md'}`}
+    >
       <div className="flex justify-between items-start mb-2">
         <h3 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100 flex-1">
           {task.title}

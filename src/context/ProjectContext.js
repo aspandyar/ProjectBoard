@@ -1,6 +1,6 @@
 'use client';
 
-import { createContext, useContext, useReducer, useEffect } from 'react';
+import React, { createContext, useContext, useReducer, useEffect, useRef } from 'react';
 
 // Initial state structure
 const initialState = {
@@ -109,6 +109,7 @@ const ProjectContext = createContext(null);
 // Context Provider Component
 export function ProjectProvider({ children }) {
   const [state, dispatch] = useReducer(projectReducer, initialState);
+  const isInitializedRef = useRef(false);
 
   // Load state from LocalStorage on mount
   useEffect(() => {
@@ -121,11 +122,14 @@ export function ProjectProvider({ children }) {
         console.error('Error loading state from LocalStorage:', error);
       }
     }
+    isInitializedRef.current = true;
   }, []);
 
-  // Save state to LocalStorage whenever state changes
+  // Save state to LocalStorage whenever state changes (but only after initialization)
   useEffect(() => {
-    localStorage.setItem('projectBoardState', JSON.stringify(state));
+    if (isInitializedRef.current) {
+      localStorage.setItem('projectBoardState', JSON.stringify(state));
+    }
   }, [state]);
 
   return (

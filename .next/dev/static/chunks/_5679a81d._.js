@@ -133,16 +133,16 @@ function projectReducer(state, action) {
 const ProjectContext = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createContext"])(null);
 function ProjectProvider(t0) {
     _s();
-    const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(12);
-    if ($[0] !== "44e612ea17316ebc03ef50f4a0740b5c143de3c2bd534c038045805e9f3d2b06") {
-        for(let $i = 0; $i < 12; $i += 1){
+    const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(11);
+    if ($[0] !== "d3980b696040a82bf16450eb6360da54ef35edc786973e587d28f5b4d907454d") {
+        for(let $i = 0; $i < 11; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "44e612ea17316ebc03ef50f4a0740b5c143de3c2bd534c038045805e9f3d2b06";
+        $[0] = "d3980b696040a82bf16450eb6360da54ef35edc786973e587d28f5b4d907454d";
     }
     const { children } = t0;
     const [state, dispatch] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useReducer"])(projectReducer, initialState);
-    const [isInitialized, setIsInitialized] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const isInitializedRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(false);
     let t1;
     let t2;
     if ($[1] === Symbol.for("react.memo_cache_sentinel")) {
@@ -162,7 +162,7 @@ function ProjectProvider(t0) {
                         console.error("Error loading state from LocalStorage:", error);
                     }
                 }
-                setIsInitialized(true);
+                isInitializedRef.current = true;
             }
         })["ProjectProvider[useEffect()]"];
         t2 = [];
@@ -175,66 +175,64 @@ function ProjectProvider(t0) {
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])(t1, t2);
     let t3;
     let t4;
-    if ($[3] !== isInitialized || $[4] !== state) {
+    if ($[3] !== state) {
         t3 = ({
             "ProjectProvider[useEffect()]": ()=>{
-                if (isInitialized) {
+                if (isInitializedRef.current) {
                     localStorage.setItem("projectBoardState", JSON.stringify(state));
                 }
             }
         })["ProjectProvider[useEffect()]"];
         t4 = [
-            state,
-            isInitialized
+            state
         ];
-        $[3] = isInitialized;
-        $[4] = state;
-        $[5] = t3;
-        $[6] = t4;
+        $[3] = state;
+        $[4] = t3;
+        $[5] = t4;
     } else {
-        t3 = $[5];
-        t4 = $[6];
+        t3 = $[4];
+        t4 = $[5];
     }
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])(t3, t4);
     let t5;
-    if ($[7] !== state) {
+    if ($[6] !== state) {
         t5 = {
             state,
             dispatch
         };
-        $[7] = state;
-        $[8] = t5;
+        $[6] = state;
+        $[7] = t5;
     } else {
-        t5 = $[8];
+        t5 = $[7];
     }
     let t6;
-    if ($[9] !== children || $[10] !== t5) {
+    if ($[8] !== children || $[9] !== t5) {
         t6 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(ProjectContext.Provider, {
             value: t5,
             children: children
         }, void 0, false, {
             fileName: "[project]/src/context/ProjectContext.js",
-            lineNumber: 194,
+            lineNumber: 193,
             columnNumber: 10
         }, this);
-        $[9] = children;
-        $[10] = t5;
-        $[11] = t6;
+        $[8] = children;
+        $[9] = t5;
+        $[10] = t6;
     } else {
-        t6 = $[11];
+        t6 = $[10];
     }
     return t6;
 }
-_s(ProjectProvider, "yxPK3Ifn9Na7YFEV25l+zTHiz38=");
+_s(ProjectProvider, "dzK4Am6vzTlByD0UquXJaL+JMQ0=");
 _c = ProjectProvider;
 function useProjectContext() {
     _s1();
     const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(1);
-    if ($[0] !== "44e612ea17316ebc03ef50f4a0740b5c143de3c2bd534c038045805e9f3d2b06") {
+    if ($[0] !== "d3980b696040a82bf16450eb6360da54ef35edc786973e587d28f5b4d907454d") {
         for(let $i = 0; $i < 1; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "44e612ea17316ebc03ef50f4a0740b5c143de3c2bd534c038045805e9f3d2b06";
+        $[0] = "d3980b696040a82bf16450eb6360da54ef35edc786973e587d28f5b4d907454d";
     }
     const context = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useContext"])(ProjectContext);
     if (!context) {
@@ -265,11 +263,11 @@ var _s = __turbopack_context__.k.signature();
 function useProjectManager() {
     _s();
     const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(18);
-    if ($[0] !== "a23643c340ba380f1f84f2af2dfba982dc27d396a59c2757d3453a3950a5db59") {
+    if ($[0] !== "81f2a2ed6874b7de06892a89eecff7a48adc0ed00f0c6950256c91a12d10bc74") {
         for(let $i = 0; $i < 18; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "a23643c340ba380f1f84f2af2dfba982dc27d396a59c2757d3453a3950a5db59";
+        $[0] = "81f2a2ed6874b7de06892a89eecff7a48adc0ed00f0c6950256c91a12d10bc74";
     }
     const { state, dispatch } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$context$2f$ProjectContext$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useProjectContext"])();
     let t0;
@@ -393,6 +391,169 @@ _s(useProjectManager, "4lMyru2IJOMqTqxoNlQD5O01Bzg=", false, function() {
         __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$context$2f$ProjectContext$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useProjectContext"]
     ];
 });
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
+"[project]/src/components/NavBar.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>NavBar
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+/**
+ * NavBar Component - Navigation bar inside the header
+ */ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/compiler-runtime.js [app-client] (ecmascript)");
+'use client';
+;
+;
+function NavBar() {
+    const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(2);
+    if ($[0] !== "e4325a96ded55c671848a079e8f6d40d4b1061c5939545c79f2c74d241f53c9a") {
+        for(let $i = 0; $i < 2; $i += 1){
+            $[$i] = Symbol.for("react.memo_cache_sentinel");
+        }
+        $[0] = "e4325a96ded55c671848a079e8f6d40d4b1061c5939545c79f2c74d241f53c9a";
+    }
+    let t0;
+    if ($[1] === Symbol.for("react.memo_cache_sentinel")) {
+        t0 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
+            className: "flex items-center justify-center gap-4",
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                    onClick: _NavBarButtonOnClick,
+                    className: "px-4 py-2 text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:text-red-600 dark:hover:text-red-400 transition-colors",
+                    "aria-label": "Clear all data",
+                    children: "Clear Data"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/NavBar.js",
+                    lineNumber: 17,
+                    columnNumber: 66
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                    href: "https://github.com",
+                    target: "_blank",
+                    rel: "noopener noreferrer",
+                    className: "px-4 py-2 text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors",
+                    children: "GitHub"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/NavBar.js",
+                    lineNumber: 17,
+                    columnNumber: 288
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "[project]/src/components/NavBar.js",
+            lineNumber: 17,
+            columnNumber: 10
+        }, this);
+        $[1] = t0;
+    } else {
+        t0 = $[1];
+    }
+    return t0;
+}
+_c = NavBar;
+function _NavBarButtonOnClick() {
+    if (window.confirm("This will clear all tasks. Are you sure?")) {
+        localStorage.removeItem("projectBoardState");
+        window.location.reload();
+    }
+}
+var _c;
+__turbopack_context__.k.register(_c, "NavBar");
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
+"[project]/src/components/Header.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>Header
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/compiler-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$NavBar$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/NavBar.js [app-client] (ecmascript)");
+'use client';
+;
+;
+;
+function Header() {
+    const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(2);
+    if ($[0] !== "3741fd4e5bf7cb9ea2f2311a524919e0a0851ec0466d127eae6f245a08f44cda") {
+        for(let $i = 0; $i < 2; $i += 1){
+            $[$i] = Symbol.for("react.memo_cache_sentinel");
+        }
+        $[0] = "3741fd4e5bf7cb9ea2f2311a524919e0a0851ec0466d127eae6f245a08f44cda";
+    }
+    let t0;
+    if ($[1] === Symbol.for("react.memo_cache_sentinel")) {
+        t0 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("header", {
+            className: "bg-white dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-800 shadow-sm",
+            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "max-w-7xl mx-auto px-4 py-6",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "flex flex-col md:flex-row md:items-center md:justify-between gap-4",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "text-center md:text-left",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
+                                    className: "text-3xl md:text-4xl font-bold text-zinc-900 dark:text-zinc-100 mb-2",
+                                    children: "Project Board"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/Header.js",
+                                    lineNumber: 19,
+                                    columnNumber: 283
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    className: "text-sm md:text-base text-zinc-600 dark:text-zinc-400",
+                                    children: "Manage your tasks across different columns"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/Header.js",
+                                    lineNumber: 19,
+                                    columnNumber: 386
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/src/components/Header.js",
+                            lineNumber: 19,
+                            columnNumber: 241
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$NavBar$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
+                            fileName: "[project]/src/components/Header.js",
+                            lineNumber: 19,
+                            columnNumber: 507
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/src/components/Header.js",
+                    lineNumber: 19,
+                    columnNumber: 157
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/src/components/Header.js",
+                lineNumber: 19,
+                columnNumber: 112
+            }, this)
+        }, void 0, false, {
+            fileName: "[project]/src/components/Header.js",
+            lineNumber: 19,
+            columnNumber: 10
+        }, this);
+        $[1] = t0;
+    } else {
+        t0 = $[1];
+    }
+    return t0;
+}
+_c = Header;
+var _c;
+__turbopack_context__.k.register(_c, "Header");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
 }
@@ -806,6 +967,174 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
 }
 }),
+"[project]/src/components/Main.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>Main
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/compiler-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Column$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/Column.js [app-client] (ecmascript)");
+'use client';
+;
+;
+;
+function Main(t0) {
+    const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(12);
+    if ($[0] !== "04c5b8f79fbf190064e009ec44f883af452d57a6b9f78bbef0a7c9ed49f12268") {
+        for(let $i = 0; $i < 12; $i += 1){
+            $[$i] = Symbol.for("react.memo_cache_sentinel");
+        }
+        $[0] = "04c5b8f79fbf190064e009ec44f883af452d57a6b9f78bbef0a7c9ed49f12268";
+    }
+    const { projects, onAddTask, onDeleteTask, onMoveTask } = t0;
+    let t1;
+    if ($[1] !== onAddTask || $[2] !== onDeleteTask || $[3] !== onMoveTask || $[4] !== projects) {
+        let t2;
+        if ($[6] !== onAddTask || $[7] !== onDeleteTask || $[8] !== onMoveTask) {
+            t2 = ({
+                "Main[projects.map()]": (project)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Column$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                        project: project,
+                        onAddTask: onAddTask,
+                        onDeleteTask: onDeleteTask,
+                        onMoveTask: onMoveTask
+                    }, project.id, false, {
+                        fileName: "[project]/src/components/Main.js",
+                        lineNumber: 28,
+                        columnNumber: 44
+                    }, this)
+            })["Main[projects.map()]"];
+            $[6] = onAddTask;
+            $[7] = onDeleteTask;
+            $[8] = onMoveTask;
+            $[9] = t2;
+        } else {
+            t2 = $[9];
+        }
+        t1 = projects.map(t2);
+        $[1] = onAddTask;
+        $[2] = onDeleteTask;
+        $[3] = onMoveTask;
+        $[4] = projects;
+        $[5] = t1;
+    } else {
+        t1 = $[5];
+    }
+    let t2;
+    if ($[10] !== t1) {
+        t2 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
+            className: "flex-1 py-8 px-4",
+            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "max-w-7xl mx-auto",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "flex flex-wrap gap-4 justify-center",
+                    children: t1
+                }, void 0, false, {
+                    fileName: "[project]/src/components/Main.js",
+                    lineNumber: 48,
+                    columnNumber: 80
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/src/components/Main.js",
+                lineNumber: 48,
+                columnNumber: 45
+            }, this)
+        }, void 0, false, {
+            fileName: "[project]/src/components/Main.js",
+            lineNumber: 48,
+            columnNumber: 10
+        }, this);
+        $[10] = t1;
+        $[11] = t2;
+    } else {
+        t2 = $[11];
+    }
+    return t2;
+}
+_c = Main;
+var _c;
+__turbopack_context__.k.register(_c, "Main");
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
+"[project]/src/components/Footer.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>Footer
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+/**
+ * Footer Component - Application footer
+ */ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/compiler-runtime.js [app-client] (ecmascript)");
+'use client';
+;
+;
+function Footer() {
+    const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(2);
+    if ($[0] !== "dd04181d09d8fbc773161952c3833cde75f0ff80a428fb9731d9df8888856fb6") {
+        for(let $i = 0; $i < 2; $i += 1){
+            $[$i] = Symbol.for("react.memo_cache_sentinel");
+        }
+        $[0] = "dd04181d09d8fbc773161952c3833cde75f0ff80a428fb9731d9df8888856fb6";
+    }
+    let t0;
+    if ($[1] === Symbol.for("react.memo_cache_sentinel")) {
+        t0 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("footer", {
+            className: "bg-white dark:bg-zinc-900 border-t border-zinc-200 dark:border-zinc-800 mt-auto",
+            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "max-w-7xl mx-auto px-4 py-6",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "text-center text-sm text-zinc-600 dark:text-zinc-400",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                            children: "© 2025 Project Board. Built with React."
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/Footer.js",
+                            lineNumber: 17,
+                            columnNumber: 225
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                            className: "mt-2",
+                            children: "Aspandyar Sharip"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/Footer.js",
+                            lineNumber: 17,
+                            columnNumber: 271
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/src/components/Footer.js",
+                    lineNumber: 17,
+                    columnNumber: 155
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/src/components/Footer.js",
+                lineNumber: 17,
+                columnNumber: 110
+            }, this)
+        }, void 0, false, {
+            fileName: "[project]/src/components/Footer.js",
+            lineNumber: 17,
+            columnNumber: 10
+        }, this);
+        $[1] = t0;
+    } else {
+        t0 = $[1];
+    }
+    return t0;
+}
+_c = Footer;
+var _c;
+__turbopack_context__.k.register(_c, "Footer");
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
 "[project]/src/components/App.js [app-client] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
@@ -816,48 +1145,32 @@ __turbopack_context__.s([
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/compiler-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$useProjectManager$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/hooks/useProjectManager.js [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Column$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/Column.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Header$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/Header.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Main$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/Main.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Footer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/Footer.js [app-client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
 'use client';
 ;
 ;
 ;
+;
+;
 function App() {
     _s();
-    const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(11);
-    if ($[0] !== "511c2ee7b2847b7a1312c24d83092423ed06fee1961769b01102fafe50bfb388") {
-        for(let $i = 0; $i < 11; $i += 1){
+    const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(10);
+    if ($[0] !== "dd59e45ac86489f99215fb31f2f5c59596090d30f650d2b8f79a20dfc31c6a5b") {
+        for(let $i = 0; $i < 10; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "511c2ee7b2847b7a1312c24d83092423ed06fee1961769b01102fafe50bfb388";
+        $[0] = "dd59e45ac86489f99215fb31f2f5c59596090d30f650d2b8f79a20dfc31c6a5b";
     }
-    const { projects, addTask, deleteTask } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$useProjectManager$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useProjectManager"])();
+    const { projects, addTask, deleteTask, moveTask } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$useProjectManager$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useProjectManager"])();
     let t0;
     if ($[1] === Symbol.for("react.memo_cache_sentinel")) {
-        t0 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("header", {
-            className: "mb-8 text-center",
-            children: [
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                    className: "text-4xl font-bold text-zinc-900 dark:text-zinc-100 mb-2",
-                    children: "Project Board"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/App.js",
-                    lineNumber: 26,
-                    columnNumber: 47
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                    className: "text-zinc-600 dark:text-zinc-400",
-                    children: "Manage your tasks across different columns"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/App.js",
-                    lineNumber: 26,
-                    columnNumber: 138
-                }, this)
-            ]
-        }, void 0, true, {
+        t0 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Header$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
             fileName: "[project]/src/components/App.js",
-            lineNumber: 26,
+            lineNumber: 29,
             columnNumber: 10
         }, this);
         $[1] = t0;
@@ -865,69 +1178,58 @@ function App() {
         t0 = $[1];
     }
     let t1;
-    if ($[2] !== addTask || $[3] !== deleteTask || $[4] !== projects) {
-        let t2;
-        if ($[6] !== addTask || $[7] !== deleteTask) {
-            t2 = ({
-                "App[projects.map()]": (project)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Column$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                        project: project,
-                        onAddTask: addTask,
-                        onDeleteTask: deleteTask
-                    }, project.id, false, {
-                        fileName: "[project]/src/components/App.js",
-                        lineNumber: 36,
-                        columnNumber: 43
-                    }, this)
-            })["App[projects.map()]"];
-            $[6] = addTask;
-            $[7] = deleteTask;
-            $[8] = t2;
-        } else {
-            t2 = $[8];
-        }
-        t1 = projects.map(t2);
+    if ($[2] !== addTask || $[3] !== deleteTask || $[4] !== moveTask || $[5] !== projects) {
+        t1 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Main$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+            projects: projects,
+            onAddTask: addTask,
+            onDeleteTask: deleteTask,
+            onMoveTask: moveTask
+        }, void 0, false, {
+            fileName: "[project]/src/components/App.js",
+            lineNumber: 36,
+            columnNumber: 10
+        }, this);
         $[2] = addTask;
         $[3] = deleteTask;
-        $[4] = projects;
-        $[5] = t1;
+        $[4] = moveTask;
+        $[5] = projects;
+        $[6] = t1;
     } else {
-        t1 = $[5];
+        t1 = $[6];
     }
     let t2;
-    if ($[9] !== t1) {
-        t2 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "min-h-screen bg-zinc-50 dark:bg-black py-8 px-4",
-            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "max-w-7xl mx-auto",
-                children: [
-                    t0,
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "flex flex-wrap gap-4 justify-center",
-                        children: t1
-                    }, void 0, false, {
-                        fileName: "[project]/src/components/App.js",
-                        lineNumber: 54,
-                        columnNumber: 114
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "[project]/src/components/App.js",
-                lineNumber: 54,
-                columnNumber: 75
-            }, this)
-        }, void 0, false, {
+    if ($[7] === Symbol.for("react.memo_cache_sentinel")) {
+        t2 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Footer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
+            fileName: "[project]/src/components/App.js",
+            lineNumber: 47,
+            columnNumber: 10
+        }, this);
+        $[7] = t2;
+    } else {
+        t2 = $[7];
+    }
+    let t3;
+    if ($[8] !== t1) {
+        t3 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "min-h-screen bg-zinc-50 dark:bg-black flex flex-col",
+            children: [
+                t0,
+                t1,
+                t2
+            ]
+        }, void 0, true, {
             fileName: "[project]/src/components/App.js",
             lineNumber: 54,
             columnNumber: 10
         }, this);
-        $[9] = t1;
-        $[10] = t2;
+        $[8] = t1;
+        $[9] = t3;
     } else {
-        t2 = $[10];
+        t3 = $[9];
     }
-    return t2;
+    return t3;
 }
-_s(App, "jl5hzBotZwtGjSp3J7PfUI8cncY=", false, function() {
+_s(App, "ntFOjp3lgiTiNE3cQkvqeMA42kY=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$useProjectManager$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useProjectManager"]
     ];
@@ -1206,4 +1508,4 @@ else {
 }),
 ]);
 
-//# sourceMappingURL=_4244660d._.js.map
+//# sourceMappingURL=_5679a81d._.js.map

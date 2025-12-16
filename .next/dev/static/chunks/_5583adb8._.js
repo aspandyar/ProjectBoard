@@ -397,411 +397,96 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
 }
 }),
-"[project]/src/components/Task.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"[project]/src/components/Header.js [app-client] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
 __turbopack_context__.s([
     "default",
-    ()=>Task
+    ()=>Header
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/compiler-runtime.js [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
-;
-var _s = __turbopack_context__.k.signature();
+(()=>{
+    const e = new Error("Cannot find module './NavBar'");
+    e.code = 'MODULE_NOT_FOUND';
+    throw e;
+})();
 'use client';
 ;
 ;
-function Task(t0) {
-    _s();
-    const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(31);
-    if ($[0] !== "f1c61399507a2a5138cf12a9b91db26bad4f41af46dc0e71f639ccf450de7d06") {
-        for(let $i = 0; $i < 31; $i += 1){
+;
+function Header() {
+    const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(2);
+    if ($[0] !== "3741fd4e5bf7cb9ea2f2311a524919e0a0851ec0466d127eae6f245a08f44cda") {
+        for(let $i = 0; $i < 2; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "f1c61399507a2a5138cf12a9b91db26bad4f41af46dc0e71f639ccf450de7d06";
+        $[0] = "3741fd4e5bf7cb9ea2f2311a524919e0a0851ec0466d127eae6f245a08f44cda";
     }
-    const { task, onDelete, projectId, onDragStart, onDragEnd, isDragging } = t0;
-    const [isDraggedOver, setIsDraggedOver] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
-    let t1;
-    if ($[1] !== onDelete || $[2] !== projectId || $[3] !== task.id || $[4] !== task.title) {
-        t1 = ({
-            "Task[handleDelete]": ()=>{
-                if (window.confirm(`Are you sure you want to delete "${task.title}"?`)) {
-                    onDelete(projectId, task.id);
-                }
-            }
-        })["Task[handleDelete]"];
-        $[1] = onDelete;
-        $[2] = projectId;
-        $[3] = task.id;
-        $[4] = task.title;
-        $[5] = t1;
-    } else {
-        t1 = $[5];
-    }
-    const handleDelete = t1;
-    let t2;
-    if ($[6] !== onDragStart || $[7] !== projectId || $[8] !== task.id) {
-        t2 = ({
-            "Task[handleDragStart]": (e)=>{
-                e.dataTransfer.effectAllowed = "move";
-                e.dataTransfer.setData("text/plain", JSON.stringify({
-                    taskId: task.id,
-                    projectId
-                }));
-                onDragStart && onDragStart(task.id);
-            }
-        })["Task[handleDragStart]"];
-        $[6] = onDragStart;
-        $[7] = projectId;
-        $[8] = task.id;
-        $[9] = t2;
-    } else {
-        t2 = $[9];
-    }
-    const handleDragStart = t2;
-    let t3;
-    if ($[10] !== onDragEnd) {
-        t3 = ({
-            "Task[handleDragEnd]": ()=>{
-                onDragEnd && onDragEnd();
-                setIsDraggedOver(false);
-            }
-        })["Task[handleDragEnd]"];
-        $[10] = onDragEnd;
-        $[11] = t3;
-    } else {
-        t3 = $[11];
-    }
-    const handleDragEnd = t3;
-    let t4;
-    let t5;
-    if ($[12] === Symbol.for("react.memo_cache_sentinel")) {
-        t4 = ({
-            "Task[<div>.onDragOver]": (e_0)=>{
-                e_0.preventDefault();
-                setIsDraggedOver(true);
-            }
-        })["Task[<div>.onDragOver]"];
-        t5 = ({
-            "Task[<div>.onDragLeave]": ()=>setIsDraggedOver(false)
-        })["Task[<div>.onDragLeave]"];
-        $[12] = t4;
-        $[13] = t5;
-    } else {
-        t4 = $[12];
-        t5 = $[13];
-    }
-    const t6 = `bg-white dark:bg-zinc-800 rounded-lg shadow-sm border border-zinc-200 dark:border-zinc-700 p-4 mb-3 transition-all cursor-move ${isDragging ? "opacity-50 scale-95" : ""} ${isDraggedOver ? "ring-2 ring-blue-500" : "hover:shadow-md"}`;
-    let t7;
-    if ($[14] !== task.title) {
-        t7 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-            className: "text-lg font-semibold text-zinc-900 dark:text-zinc-100 flex-1",
-            children: task.title
-        }, void 0, false, {
-            fileName: "[project]/src/components/Task.js",
-            lineNumber: 100,
-            columnNumber: 10
-        }, this);
-        $[14] = task.title;
-        $[15] = t7;
-    } else {
-        t7 = $[15];
-    }
-    const t8 = `Delete task ${task.title}`;
-    let t9;
-    if ($[16] === Symbol.for("react.memo_cache_sentinel")) {
-        t9 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-            xmlns: "http://www.w3.org/2000/svg",
-            className: "h-5 w-5",
-            viewBox: "0 0 20 20",
-            fill: "currentColor",
-            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                fillRule: "evenodd",
-                d: "M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z",
-                clipRule: "evenodd"
+    let t0;
+    if ($[1] === Symbol.for("react.memo_cache_sentinel")) {
+        t0 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("header", {
+            className: "bg-white dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-800 shadow-sm",
+            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "max-w-7xl mx-auto px-4 py-6",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "flex flex-col md:flex-row md:items-center md:justify-between gap-4",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "text-center md:text-left",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
+                                    className: "text-3xl md:text-4xl font-bold text-zinc-900 dark:text-zinc-100 mb-2",
+                                    children: "Project Board"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/Header.js",
+                                    lineNumber: 19,
+                                    columnNumber: 283
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    className: "text-sm md:text-base text-zinc-600 dark:text-zinc-400",
+                                    children: "Manage your tasks across different columns"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/Header.js",
+                                    lineNumber: 19,
+                                    columnNumber: 386
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/src/components/Header.js",
+                            lineNumber: 19,
+                            columnNumber: 241
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(NavBar, {}, void 0, false, {
+                            fileName: "[project]/src/components/Header.js",
+                            lineNumber: 19,
+                            columnNumber: 507
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/src/components/Header.js",
+                    lineNumber: 19,
+                    columnNumber: 157
+                }, this)
             }, void 0, false, {
-                fileName: "[project]/src/components/Task.js",
-                lineNumber: 109,
-                columnNumber: 110
+                fileName: "[project]/src/components/Header.js",
+                lineNumber: 19,
+                columnNumber: 112
             }, this)
         }, void 0, false, {
-            fileName: "[project]/src/components/Task.js",
-            lineNumber: 109,
+            fileName: "[project]/src/components/Header.js",
+            lineNumber: 19,
             columnNumber: 10
         }, this);
-        $[16] = t9;
+        $[1] = t0;
     } else {
-        t9 = $[16];
+        t0 = $[1];
     }
-    let t10;
-    if ($[17] !== handleDelete || $[18] !== t8) {
-        t10 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-            onClick: handleDelete,
-            className: "ml-2 text-red-500 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300 transition-colors",
-            "aria-label": t8,
-            title: "Delete task",
-            children: t9
-        }, void 0, false, {
-            fileName: "[project]/src/components/Task.js",
-            lineNumber: 116,
-            columnNumber: 11
-        }, this);
-        $[17] = handleDelete;
-        $[18] = t8;
-        $[19] = t10;
-    } else {
-        t10 = $[19];
-    }
-    let t11;
-    if ($[20] !== t10 || $[21] !== t7) {
-        t11 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "flex justify-between items-start mb-2",
-            children: [
-                t7,
-                t10
-            ]
-        }, void 0, true, {
-            fileName: "[project]/src/components/Task.js",
-            lineNumber: 125,
-            columnNumber: 11
-        }, this);
-        $[20] = t10;
-        $[21] = t7;
-        $[22] = t11;
-    } else {
-        t11 = $[22];
-    }
-    let t12;
-    if ($[23] !== task.description) {
-        t12 = task.description && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-            className: "text-sm text-zinc-600 dark:text-zinc-400 mt-2",
-            children: task.description
-        }, void 0, false, {
-            fileName: "[project]/src/components/Task.js",
-            lineNumber: 134,
-            columnNumber: 31
-        }, this);
-        $[23] = task.description;
-        $[24] = t12;
-    } else {
-        t12 = $[24];
-    }
-    let t13;
-    if ($[25] !== handleDragEnd || $[26] !== handleDragStart || $[27] !== t11 || $[28] !== t12 || $[29] !== t6) {
-        t13 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            draggable: true,
-            onDragStart: handleDragStart,
-            onDragEnd: handleDragEnd,
-            onDragOver: t4,
-            onDragLeave: t5,
-            className: t6,
-            children: [
-                t11,
-                t12
-            ]
-        }, void 0, true, {
-            fileName: "[project]/src/components/Task.js",
-            lineNumber: 142,
-            columnNumber: 11
-        }, this);
-        $[25] = handleDragEnd;
-        $[26] = handleDragStart;
-        $[27] = t11;
-        $[28] = t12;
-        $[29] = t6;
-        $[30] = t13;
-    } else {
-        t13 = $[30];
-    }
-    return t13;
+    return t0;
 }
-_s(Task, "woBklPh3jtvake5vT0O3ppZxKuw=");
-_c = Task;
+_c = Header;
 var _c;
-__turbopack_context__.k.register(_c, "Task");
-if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
-    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
-}
-}),
-"[project]/src/components/Column.js [app-client] (ecmascript)", ((__turbopack_context__) => {
-"use strict";
-
-__turbopack_context__.s([
-    "default",
-    ()=>Column
-]);
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Task$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/Task.js [app-client] (ecmascript)");
-;
-var _s = __turbopack_context__.k.signature();
-'use client';
-;
-;
-function Column({ project, onAddTask, onDeleteTask, onMoveTask }) {
-    _s();
-    const [isAddingTask, setIsAddingTask] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
-    const [taskTitle, setTaskTitle] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
-    const [taskDescription, setTaskDescription] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
-    const [draggedTaskId, setDraggedTaskId] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
-    const [isDragOver, setIsDragOver] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
-    const handleSubmit = (e)=>{
-        e.preventDefault();
-        if (taskTitle.trim()) {
-            onAddTask(project.id, taskTitle, taskDescription);
-            setTaskTitle('');
-            setTaskDescription('');
-            setIsAddingTask(false);
-        }
-    };
-    const handleCancel = ()=>{
-        setTaskTitle('');
-        setTaskDescription('');
-        setIsAddingTask(false);
-    };
-    const handleDragOver = (e_0)=>{
-        e_0.preventDefault();
-        e_0.dataTransfer.dropEffect = 'move';
-        setIsDragOver(true);
-    };
-    const handleDragLeave = ()=>{
-        setIsDragOver(false);
-    };
-    const handleDrop = (e_1)=>{
-        e_1.preventDefault();
-        setIsDragOver(false);
-        try {
-            const data = JSON.parse(e_1.dataTransfer.getData('text/plain'));
-            const { taskId, projectId: sourceProjectId } = data;
-            if (sourceProjectId !== project.id && onMoveTask) {
-                onMoveTask(sourceProjectId, project.id, taskId);
-            }
-        } catch (error) {
-            console.error('Error handling drop:', error);
-        }
-    };
-    const handleDragStart = (taskId_0)=>{
-        setDraggedTaskId(taskId_0);
-    };
-    const handleDragEnd = ()=>{
-        setDraggedTaskId(null);
-    };
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        onDragOver: handleDragOver,
-        onDragLeave: handleDragLeave,
-        onDrop: handleDrop,
-        className: `flex-1 min-w-[280px] bg-zinc-50 dark:bg-zinc-900 rounded-lg p-4 mx-2 transition-colors ${isDragOver ? 'bg-blue-50 dark:bg-blue-900/20 border-2 border-blue-500 border-dashed' : ''}`,
-        children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                className: "text-xl font-bold text-zinc-900 dark:text-zinc-100 mb-4",
-                children: project.name
-            }, void 0, false, {
-                fileName: "[project]/src/components/Column.js",
-                lineNumber: 66,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "mb-4",
-                children: project.tasks.map((task)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Task$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                        task: task,
-                        projectId: project.id,
-                        onDelete: onDeleteTask,
-                        onDragStart: handleDragStart,
-                        onDragEnd: handleDragEnd,
-                        isDragging: draggedTaskId === task.id
-                    }, task.id, false, {
-                        fileName: "[project]/src/components/Column.js",
-                        lineNumber: 71,
-                        columnNumber: 36
-                    }, this))
-            }, void 0, false, {
-                fileName: "[project]/src/components/Column.js",
-                lineNumber: 70,
-                columnNumber: 7
-            }, this),
-            isAddingTask ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
-                onSubmit: handleSubmit,
-                className: "bg-white dark:bg-zinc-800 rounded-lg p-4 border border-zinc-200 dark:border-zinc-700",
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                        type: "text",
-                        value: taskTitle,
-                        onChange: (e_2)=>setTaskTitle(e_2.target.value),
-                        placeholder: "Task title",
-                        className: "w-full px-3 py-2 mb-2 border border-zinc-300 dark:border-zinc-600 rounded-md bg-white dark:bg-zinc-700 text-zinc-900 dark:text-zinc-100 placeholder-zinc-500 dark:placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-blue-500",
-                        autoFocus: true,
-                        required: true
-                    }, void 0, false, {
-                        fileName: "[project]/src/components/Column.js",
-                        lineNumber: 75,
-                        columnNumber: 11
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
-                        value: taskDescription,
-                        onChange: (e_3)=>setTaskDescription(e_3.target.value),
-                        placeholder: "Task description (optional)",
-                        rows: "2",
-                        className: "w-full px-3 py-2 mb-2 border border-zinc-300 dark:border-zinc-600 rounded-md bg-white dark:bg-zinc-700 text-zinc-900 dark:text-zinc-100 placeholder-zinc-500 dark:placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
-                    }, void 0, false, {
-                        fileName: "[project]/src/components/Column.js",
-                        lineNumber: 76,
-                        columnNumber: 11
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "flex gap-2",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                type: "submit",
-                                className: "flex-1 px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-md transition-colors font-medium",
-                                children: "Add Task"
-                            }, void 0, false, {
-                                fileName: "[project]/src/components/Column.js",
-                                lineNumber: 78,
-                                columnNumber: 13
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                type: "button",
-                                onClick: handleCancel,
-                                className: "px-4 py-2 bg-zinc-200 dark:bg-zinc-700 hover:bg-zinc-300 dark:hover:bg-zinc-600 text-zinc-900 dark:text-zinc-100 rounded-md transition-colors",
-                                children: "Cancel"
-                            }, void 0, false, {
-                                fileName: "[project]/src/components/Column.js",
-                                lineNumber: 81,
-                                columnNumber: 13
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/src/components/Column.js",
-                        lineNumber: 77,
-                        columnNumber: 11
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "[project]/src/components/Column.js",
-                lineNumber: 74,
-                columnNumber: 23
-            }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                onClick: ()=>setIsAddingTask(true),
-                className: "w-full py-2 px-4 border-2 border-dashed border-zinc-300 dark:border-zinc-600 rounded-lg text-zinc-600 dark:text-zinc-400 hover:border-blue-500 dark:hover:border-blue-500 hover:text-blue-500 dark:hover:text-blue-400 transition-colors font-medium",
-                children: "+ Add Task"
-            }, void 0, false, {
-                fileName: "[project]/src/components/Column.js",
-                lineNumber: 85,
-                columnNumber: 19
-            }, this)
-        ]
-    }, void 0, true, {
-        fileName: "[project]/src/components/Column.js",
-        lineNumber: 65,
-        columnNumber: 10
-    }, this);
-}
-_s(Column, "GlkEBt1td4R/33VOpLwezBRIDZ4=");
-_c = Column;
-var _c;
-__turbopack_context__.k.register(_c, "Column");
+__turbopack_context__.k.register(_c, "Header");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
 }
@@ -816,48 +501,40 @@ __turbopack_context__.s([
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/compiler-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$useProjectManager$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/hooks/useProjectManager.js [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Column$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/Column.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Header$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/Header.js [app-client] (ecmascript)");
+(()=>{
+    const e = new Error("Cannot find module './Main'");
+    e.code = 'MODULE_NOT_FOUND';
+    throw e;
+})();
+(()=>{
+    const e = new Error("Cannot find module './Footer'");
+    e.code = 'MODULE_NOT_FOUND';
+    throw e;
+})();
 ;
 var _s = __turbopack_context__.k.signature();
 'use client';
 ;
 ;
 ;
+;
+;
 function App() {
     _s();
-    const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(11);
-    if ($[0] !== "511c2ee7b2847b7a1312c24d83092423ed06fee1961769b01102fafe50bfb388") {
-        for(let $i = 0; $i < 11; $i += 1){
+    const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(10);
+    if ($[0] !== "dd59e45ac86489f99215fb31f2f5c59596090d30f650d2b8f79a20dfc31c6a5b") {
+        for(let $i = 0; $i < 10; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "511c2ee7b2847b7a1312c24d83092423ed06fee1961769b01102fafe50bfb388";
+        $[0] = "dd59e45ac86489f99215fb31f2f5c59596090d30f650d2b8f79a20dfc31c6a5b";
     }
-    const { projects, addTask, deleteTask } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$useProjectManager$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useProjectManager"])();
+    const { projects, addTask, deleteTask, moveTask } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$useProjectManager$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useProjectManager"])();
     let t0;
     if ($[1] === Symbol.for("react.memo_cache_sentinel")) {
-        t0 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("header", {
-            className: "mb-8 text-center",
-            children: [
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                    className: "text-4xl font-bold text-zinc-900 dark:text-zinc-100 mb-2",
-                    children: "Project Board"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/App.js",
-                    lineNumber: 26,
-                    columnNumber: 47
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                    className: "text-zinc-600 dark:text-zinc-400",
-                    children: "Manage your tasks across different columns"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/App.js",
-                    lineNumber: 26,
-                    columnNumber: 138
-                }, this)
-            ]
-        }, void 0, true, {
+        t0 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Header$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
             fileName: "[project]/src/components/App.js",
-            lineNumber: 26,
+            lineNumber: 29,
             columnNumber: 10
         }, this);
         $[1] = t0;
@@ -865,69 +542,58 @@ function App() {
         t0 = $[1];
     }
     let t1;
-    if ($[2] !== addTask || $[3] !== deleteTask || $[4] !== projects) {
-        let t2;
-        if ($[6] !== addTask || $[7] !== deleteTask) {
-            t2 = ({
-                "App[projects.map()]": (project)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Column$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                        project: project,
-                        onAddTask: addTask,
-                        onDeleteTask: deleteTask
-                    }, project.id, false, {
-                        fileName: "[project]/src/components/App.js",
-                        lineNumber: 36,
-                        columnNumber: 43
-                    }, this)
-            })["App[projects.map()]"];
-            $[6] = addTask;
-            $[7] = deleteTask;
-            $[8] = t2;
-        } else {
-            t2 = $[8];
-        }
-        t1 = projects.map(t2);
+    if ($[2] !== addTask || $[3] !== deleteTask || $[4] !== moveTask || $[5] !== projects) {
+        t1 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Main, {
+            projects: projects,
+            onAddTask: addTask,
+            onDeleteTask: deleteTask,
+            onMoveTask: moveTask
+        }, void 0, false, {
+            fileName: "[project]/src/components/App.js",
+            lineNumber: 36,
+            columnNumber: 10
+        }, this);
         $[2] = addTask;
         $[3] = deleteTask;
-        $[4] = projects;
-        $[5] = t1;
+        $[4] = moveTask;
+        $[5] = projects;
+        $[6] = t1;
     } else {
-        t1 = $[5];
+        t1 = $[6];
     }
     let t2;
-    if ($[9] !== t1) {
-        t2 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "min-h-screen bg-zinc-50 dark:bg-black py-8 px-4",
-            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "max-w-7xl mx-auto",
-                children: [
-                    t0,
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "flex flex-wrap gap-4 justify-center",
-                        children: t1
-                    }, void 0, false, {
-                        fileName: "[project]/src/components/App.js",
-                        lineNumber: 54,
-                        columnNumber: 114
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "[project]/src/components/App.js",
-                lineNumber: 54,
-                columnNumber: 75
-            }, this)
-        }, void 0, false, {
+    if ($[7] === Symbol.for("react.memo_cache_sentinel")) {
+        t2 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Footer, {}, void 0, false, {
+            fileName: "[project]/src/components/App.js",
+            lineNumber: 47,
+            columnNumber: 10
+        }, this);
+        $[7] = t2;
+    } else {
+        t2 = $[7];
+    }
+    let t3;
+    if ($[8] !== t1) {
+        t3 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "min-h-screen bg-zinc-50 dark:bg-black flex flex-col",
+            children: [
+                t0,
+                t1,
+                t2
+            ]
+        }, void 0, true, {
             fileName: "[project]/src/components/App.js",
             lineNumber: 54,
             columnNumber: 10
         }, this);
-        $[9] = t1;
-        $[10] = t2;
+        $[8] = t1;
+        $[9] = t3;
     } else {
-        t2 = $[10];
+        t3 = $[9];
     }
-    return t2;
+    return t3;
 }
-_s(App, "jl5hzBotZwtGjSp3J7PfUI8cncY=", false, function() {
+_s(App, "ntFOjp3lgiTiNE3cQkvqeMA42kY=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$useProjectManager$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useProjectManager"]
     ];
@@ -1206,4 +872,4 @@ else {
 }),
 ]);
 
-//# sourceMappingURL=_4244660d._.js.map
+//# sourceMappingURL=_5583adb8._.js.map

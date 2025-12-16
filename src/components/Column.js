@@ -7,10 +7,12 @@ import Task from './Task';
  * Column Component - Displays a list of tasks for a project/column
  * This is a presentational component that receives props and calls callbacks
  */
-export default function Column({ project, onAddTask, onDeleteTask }) {
+export default function Column({ project, onAddTask, onDeleteTask, onMoveTask }) {
   const [isAddingTask, setIsAddingTask] = useState(false);
   const [taskTitle, setTaskTitle] = useState('');
   const [taskDescription, setTaskDescription] = useState('');
+  const [draggedTaskId, setDraggedTaskId] = useState(null);
+  const [isDragOver, setIsDragOver] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -28,8 +30,49 @@ export default function Column({ project, onAddTask, onDeleteTask }) {
     setIsAddingTask(false);
   };
 
+  const handleDragOver = (e) => {
+    e.preventDefault();
+    e.dataTransfer.dropEffect = 'move';
+    setIsDragOver(true);
+  };
+
+  const handleDragLeave = () => {
+    setIsDragOver(false);
+  };
+
+  const handleDrop = (e) => {
+    e.preventDefault();
+    setIsDragOver(false);
+    
+    try {
+      const data = JSON.parse(e.dataTransfer.getData('text/plain'));
+      const { taskId, projectId: sourceProjectId } = data;
+      
+      if (sourceProjectId !== project.id && onMoveTask) {
+        onMoveTask(sourceProjectId, project.id, taskId);
+      }
+    } catch (error) {
+      console.error('Error handling drop:', error);
+    }
+  };
+
+  const handleDragStart = (taskId) => {
+    setDraggedTaskId(taskId);
+  };
+
+  const handleDragEnd = () => {
+    setDraggedTaskId(null);
+  };
+
   return (
-    <div className="flex-1 min-w-[280px] bg-zinc-50 dark:bg-zinc-900 rounded-lg p-4 mx-2">
+    <div
+      onDragOver={handleDragOver}
+      onDragLeave={handleDragLeave}
+      onDrop={handleDrop}
+      className={`flex-1 min-w-[280px] bg-zinc-50 dark:bg-zinc-900 rounded-lg p-4 mx-2 transition-colors ${
+        isDragOver ? 'bg-blue-50 dark:bg-blue-900/20 border-2 border-blue-500 border-dashed' : ''
+      }`}
+    >
       <h2 className="text-xl font-bold text-zinc-900 dark:text-zinc-100 mb-4">
         {project.name}
       </h2>
@@ -41,6 +84,9 @@ export default function Column({ project, onAddTask, onDeleteTask }) {
             task={task}
             projectId={project.id}
             onDelete={onDeleteTask}
+            onDragStart={handleDragStart}
+            onDragEnd={handleDragEnd}
+            isDragging={draggedTaskId === task.id}
           />
         ))}
       </div>
