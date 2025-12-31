@@ -1,2 +1,12 @@
-[00:00:01.474] Server  LOG      ✓ Ready in 1274ms
-[00:00:31.189] Server  LOG      ○ Compiling / ...
+[00:00:00.711] Server  LOG      ✓ Ready in 468ms
+[00:02:02.620] Browser LOG     Step changed from 0 to 1
+[00:02:02.620] Browser LOG     Step changed from 0 to 1
+[00:02:06.961] Browser LOG     Step changed from 1 to 2
+[00:02:06.961] Browser LOG     Step changed from 1 to 2
+[00:02:15.906] Browser LOG     Step changed from 2 to 3
+[00:02:15.906] Browser LOG     Step changed from 2 to 3
+[00:02:20.234] Browser LOG     Stepper completed! {}
+[00:02:20.979] Browser LOG     Step changed from 3 to 2
+[00:02:20.980] Browser LOG     Step changed from 3 to 2
+[00:02:27.295] Browser LOG     Step changed from 0 to 1
+[00:02:27.295] Browser LOG     Step changed from 0 to 1
