@@ -4,14 +4,7 @@ import { useState } from 'react';
 import Stepper from '../../components/Stepper/Stepper';
 import '../../components/Stepper/Stepper.css';
 
-/**
- * Demo page showcasing the Stepper component library
- * Demonstrates:
- * - Compound Components pattern
- * - Render Props for customization
- * - Context-based state management (no prop drilling)
- * - Full keyboard navigation and ARIA attributes
- */
+
 export default function StepperDemo() {
   const [formData, setFormData] = useState({
     personalInfo: {

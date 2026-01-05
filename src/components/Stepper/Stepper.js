@@ -3,29 +3,7 @@
 import React, { useRef, useEffect, useId } from 'react';
 import { StepperProvider, useStepperContext } from '../../context/StepperContext';
 
-/**
- * Stepper - Main compound component container
- * 
- * Features:
- * - Compound Components pattern
- * - Context-based state management (no prop drilling)
- * - Full keyboard navigation support
- * - ARIA attributes for accessibility
- * 
- * @example
- * <Stepper initialStep={0} onComplete={handleComplete}>
- *   <Stepper.Steps>
- *     <Stepper.Step stepId={0}>Step 1</Stepper.Step>
- *     <Stepper.Step stepId={1}>Step 2</Stepper.Step>
- *   </Stepper.Steps>
- *   <Stepper.Content>
- *     <Stepper.StepContent stepId={0}>Content 1</Stepper.StepContent>
- *     <Stepper.StepContent stepId={1}>Content 2</Stepper.StepContent>
- *   </Stepper.Content>
- *   <Stepper.Navigation />
- * </Stepper>
- */
-// Internal component for keyboard navigation (must be inside StepperProvider)
+
 function StepperKeyboardHandler({ children, orientation = 'horizontal', className = '' }) {
   const { activeStep, nextStep, previousStep, goToStep, totalSteps } = useStepperContext();
   const stepperRef = useRef(null);

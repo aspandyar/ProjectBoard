@@ -174,28 +174,6 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$context$2f$StepperCon
 ;
 ;
 ;
-/**
- * Stepper - Main compound component container
- * 
- * Features:
- * - Compound Components pattern
- * - Context-based state management (no prop drilling)
- * - Full keyboard navigation support
- * - ARIA attributes for accessibility
- * 
- * @example
- * <Stepper initialStep={0} onComplete={handleComplete}>
- *   <Stepper.Steps>
- *     <Stepper.Step stepId={0}>Step 1</Stepper.Step>
- *     <Stepper.Step stepId={1}>Step 2</Stepper.Step>
- *   </Stepper.Steps>
- *   <Stepper.Content>
- *     <Stepper.StepContent stepId={0}>Content 1</Stepper.StepContent>
- *     <Stepper.StepContent stepId={1}>Content 2</Stepper.StepContent>
- *   </Stepper.Content>
- *   <Stepper.Navigation />
- * </Stepper>
- */ // Internal component for keyboard navigation (must be inside StepperProvider)
 function StepperKeyboardHandler({ children, orientation = 'horizontal', className = '' }) {
     const { activeStep, nextStep, previousStep, goToStep, totalSteps } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$context$2f$StepperContext$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useStepperContext"])();
     const stepperRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
@@ -253,7 +231,7 @@ function StepperKeyboardHandler({ children, orientation = 'horizontal', classNam
         children: children
     }, void 0, false, {
         fileName: "[project]/src/components/Stepper/Stepper.js",
-        lineNumber: 76,
+        lineNumber: 54,
         columnNumber: 5
     }, this);
 }
@@ -269,12 +247,12 @@ function StepperComponent({ children, initialStep = 0, onStepChange, onComplete,
             children: children
         }, void 0, false, {
             fileName: "[project]/src/components/Stepper/Stepper.js",
-            lineNumber: 102,
+            lineNumber: 80,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/components/Stepper/Stepper.js",
-        lineNumber: 97,
+        lineNumber: 75,
         columnNumber: 5
     }, this);
 }
@@ -300,7 +278,7 @@ function StepperSteps({ children, className = '' }) {
         children: children
     }, void 0, false, {
         fileName: "[project]/src/components/Stepper/Stepper.js",
-        lineNumber: 124,
+        lineNumber: 102,
         columnNumber: 5
     }, this);
 }
@@ -368,24 +346,24 @@ function StepperStep({ stepId, children, label, description, className = '', ren
                             d: "M5 13l4 4L19 7"
                         }, void 0, false, {
                             fileName: "[project]/src/components/Stepper/Stepper.js",
-                            lineNumber: 193,
+                            lineNumber: 171,
                             columnNumber: 15
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/components/Stepper/Stepper.js",
-                        lineNumber: 192,
+                        lineNumber: 170,
                         columnNumber: 13
                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                         className: "stepper-step-number",
                         children: stepIndex + 1
                     }, void 0, false, {
                         fileName: "[project]/src/components/Stepper/Stepper.js",
-                        lineNumber: 196,
+                        lineNumber: 174,
                         columnNumber: 13
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/components/Stepper/Stepper.js",
-                    lineNumber: 190,
+                    lineNumber: 168,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -393,7 +371,7 @@ function StepperStep({ stepId, children, label, description, className = '', ren
                     children: stepLabel
                 }, void 0, false, {
                     fileName: "[project]/src/components/Stepper/Stepper.js",
-                    lineNumber: 199,
+                    lineNumber: 177,
                     columnNumber: 9
                 }, this),
                 stepDescription && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -401,18 +379,18 @@ function StepperStep({ stepId, children, label, description, className = '', ren
                     children: stepDescription
                 }, void 0, false, {
                     fileName: "[project]/src/components/Stepper/Stepper.js",
-                    lineNumber: 201,
+                    lineNumber: 179,
                     columnNumber: 11
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/Stepper/Stepper.js",
-            lineNumber: 180,
+            lineNumber: 158,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/components/Stepper/Stepper.js",
-        lineNumber: 175,
+        lineNumber: 153,
         columnNumber: 5
     }, this);
 }
@@ -425,7 +403,7 @@ function StepperContent({ children, className = '' }) {
         children: children
     }, void 0, false, {
         fileName: "[project]/src/components/Stepper/Stepper.js",
-        lineNumber: 210,
+        lineNumber: 188,
         columnNumber: 5
     }, this);
 }
@@ -450,7 +428,7 @@ function StepperStepContent({ stepId, children, className = '', render }) {
             })
         }, void 0, false, {
             fileName: "[project]/src/components/Stepper/Stepper.js",
-            lineNumber: 237,
+            lineNumber: 215,
             columnNumber: 7
         }, this);
     }
@@ -469,7 +447,7 @@ function StepperStepContent({ stepId, children, className = '', render }) {
             })
         }, void 0, false, {
             fileName: "[project]/src/components/Stepper/Stepper.js",
-            lineNumber: 256,
+            lineNumber: 234,
             columnNumber: 7
         }, this);
     }
@@ -481,7 +459,7 @@ function StepperStepContent({ stepId, children, className = '', render }) {
         children: children
     }, void 0, false, {
         fileName: "[project]/src/components/Stepper/Stepper.js",
-        lineNumber: 273,
+        lineNumber: 251,
         columnNumber: 5
     }, this);
 }
@@ -522,12 +500,12 @@ function StepperNavigation({ className = '', renderPrevious, renderNext, renderC
                     children: previousLabel
                 }, void 0, false, {
                     fileName: "[project]/src/components/Stepper/Stepper.js",
-                    lineNumber: 340,
+                    lineNumber: 318,
                     columnNumber: 13
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/Stepper/Stepper.js",
-                lineNumber: 332,
+                lineNumber: 310,
                 columnNumber: 9
             }, this),
             showNext && !isLastStep && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -545,12 +523,12 @@ function StepperNavigation({ className = '', renderPrevious, renderNext, renderC
                     children: nextLabel
                 }, void 0, false, {
                     fileName: "[project]/src/components/Stepper/Stepper.js",
-                    lineNumber: 362,
+                    lineNumber: 340,
                     columnNumber: 13
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/Stepper/Stepper.js",
-                lineNumber: 354,
+                lineNumber: 332,
                 columnNumber: 9
             }, this),
             isLastStep && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -567,18 +545,18 @@ function StepperNavigation({ className = '', renderPrevious, renderNext, renderC
                     children: completeLabel
                 }, void 0, false, {
                     fileName: "[project]/src/components/Stepper/Stepper.js",
-                    lineNumber: 383,
+                    lineNumber: 361,
                     columnNumber: 13
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/Stepper/Stepper.js",
-                lineNumber: 376,
+                lineNumber: 354,
                 columnNumber: 9
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/Stepper/Stepper.js",
-        lineNumber: 326,
+        lineNumber: 304,
         columnNumber: 5
     }, this);
 }
@@ -643,7 +621,7 @@ function StepperDemo() {
                         children: "Stepper Component Library Demo"
                     }, void 0, false, {
                         fileName: "[project]/src/app/stepper-demo/page.js",
-                        lineNumber: 49,
+                        lineNumber: 42,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -651,7 +629,7 @@ function StepperDemo() {
                         children: "A flexible, accessible multi-step form component using Compound Components and Render Props patterns."
                     }, void 0, false, {
                         fileName: "[project]/src/app/stepper-demo/page.js",
-                        lineNumber: 52,
+                        lineNumber: 45,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -662,7 +640,7 @@ function StepperDemo() {
                                 children: "Example 1: Basic Multi-Step Form"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/stepper-demo/page.js",
-                                lineNumber: 58,
+                                lineNumber: 51,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Stepper$2f$Stepper$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -679,7 +657,7 @@ function StepperDemo() {
                                                 description: "Enter your details"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/stepper-demo/page.js",
-                                                lineNumber: 68,
+                                                lineNumber: 61,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Stepper$2f$Stepper$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].Step, {
@@ -688,7 +666,7 @@ function StepperDemo() {
                                                 description: "Where do you live?"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/stepper-demo/page.js",
-                                                lineNumber: 69,
+                                                lineNumber: 62,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Stepper$2f$Stepper$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].Step, {
@@ -697,7 +675,7 @@ function StepperDemo() {
                                                 description: "Your preferences"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/stepper-demo/page.js",
-                                                lineNumber: 70,
+                                                lineNumber: 63,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Stepper$2f$Stepper$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].Step, {
@@ -706,13 +684,13 @@ function StepperDemo() {
                                                 description: "Review and submit"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/stepper-demo/page.js",
-                                                lineNumber: 71,
+                                                lineNumber: 64,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/stepper-demo/page.js",
-                                        lineNumber: 67,
+                                        lineNumber: 60,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Stepper$2f$Stepper$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].Content, {
@@ -727,7 +705,7 @@ function StepperDemo() {
                                                                 children: "Personal Information"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/stepper-demo/page.js",
-                                                                lineNumber: 78,
+                                                                lineNumber: 71,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -737,7 +715,7 @@ function StepperDemo() {
                                                                         children: "Full Name *"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/stepper-demo/page.js",
-                                                                        lineNumber: 80,
+                                                                        lineNumber: 73,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -762,13 +740,13 @@ function StepperDemo() {
                                                                         required: true
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/stepper-demo/page.js",
-                                                                        lineNumber: 83,
+                                                                        lineNumber: 76,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/app/stepper-demo/page.js",
-                                                                lineNumber: 79,
+                                                                lineNumber: 72,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -778,7 +756,7 @@ function StepperDemo() {
                                                                         children: "Email *"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/stepper-demo/page.js",
-                                                                        lineNumber: 101,
+                                                                        lineNumber: 94,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -804,13 +782,13 @@ function StepperDemo() {
                                                                         required: true
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/stepper-demo/page.js",
-                                                                        lineNumber: 104,
+                                                                        lineNumber: 97,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/app/stepper-demo/page.js",
-                                                                lineNumber: 100,
+                                                                lineNumber: 93,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -820,7 +798,7 @@ function StepperDemo() {
                                                                         children: "Phone"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/stepper-demo/page.js",
-                                                                        lineNumber: 123,
+                                                                        lineNumber: 116,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -843,24 +821,24 @@ function StepperDemo() {
                                                                         placeholder: "+1 (555) 123-4567"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/stepper-demo/page.js",
-                                                                        lineNumber: 126,
+                                                                        lineNumber: 119,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/app/stepper-demo/page.js",
-                                                                lineNumber: 122,
+                                                                lineNumber: 115,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/stepper-demo/page.js",
-                                                        lineNumber: 77,
+                                                        lineNumber: 70,
                                                         columnNumber: 21
                                                     }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/stepper-demo/page.js",
-                                                lineNumber: 75,
+                                                lineNumber: 68,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Stepper$2f$Stepper$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].StepContent, {
@@ -873,7 +851,7 @@ function StepperDemo() {
                                                                 children: "Address Information"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/stepper-demo/page.js",
-                                                                lineNumber: 148,
+                                                                lineNumber: 141,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -883,7 +861,7 @@ function StepperDemo() {
                                                                         children: "Street Address *"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/stepper-demo/page.js",
-                                                                        lineNumber: 150,
+                                                                        lineNumber: 143,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -908,13 +886,13 @@ function StepperDemo() {
                                                                         required: true
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/stepper-demo/page.js",
-                                                                        lineNumber: 153,
+                                                                        lineNumber: 146,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/app/stepper-demo/page.js",
-                                                                lineNumber: 149,
+                                                                lineNumber: 142,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -924,7 +902,7 @@ function StepperDemo() {
                                                                         children: "City *"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/stepper-demo/page.js",
-                                                                        lineNumber: 171,
+                                                                        lineNumber: 164,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -950,13 +928,13 @@ function StepperDemo() {
                                                                         required: true
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/stepper-demo/page.js",
-                                                                        lineNumber: 174,
+                                                                        lineNumber: 167,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/app/stepper-demo/page.js",
-                                                                lineNumber: 170,
+                                                                lineNumber: 163,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -966,7 +944,7 @@ function StepperDemo() {
                                                                         children: "ZIP Code *"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/stepper-demo/page.js",
-                                                                        lineNumber: 193,
+                                                                        lineNumber: 186,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -992,24 +970,24 @@ function StepperDemo() {
                                                                         required: true
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/stepper-demo/page.js",
-                                                                        lineNumber: 196,
+                                                                        lineNumber: 189,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/app/stepper-demo/page.js",
-                                                                lineNumber: 192,
+                                                                lineNumber: 185,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/stepper-demo/page.js",
-                                                        lineNumber: 147,
+                                                        lineNumber: 140,
                                                         columnNumber: 21
                                                     }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/stepper-demo/page.js",
-                                                lineNumber: 145,
+                                                lineNumber: 138,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Stepper$2f$Stepper$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].StepContent, {
@@ -1022,7 +1000,7 @@ function StepperDemo() {
                                                                 children: "Preferences"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/stepper-demo/page.js",
-                                                                lineNumber: 224,
+                                                                lineNumber: 217,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1050,7 +1028,7 @@ function StepperDemo() {
                                                                                 className: "mr-2 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/app/stepper-demo/page.js",
-                                                                                lineNumber: 227,
+                                                                                lineNumber: 220,
                                                                                 columnNumber: 27
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1058,13 +1036,13 @@ function StepperDemo() {
                                                                                 children: "Subscribe to newsletter"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/app/stepper-demo/page.js",
-                                                                                lineNumber: 243,
+                                                                                lineNumber: 236,
                                                                                 columnNumber: 27
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/app/stepper-demo/page.js",
-                                                                        lineNumber: 226,
+                                                                        lineNumber: 219,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
@@ -1089,7 +1067,7 @@ function StepperDemo() {
                                                                                 className: "mr-2 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/app/stepper-demo/page.js",
-                                                                                lineNumber: 248,
+                                                                                lineNumber: 241,
                                                                                 columnNumber: 27
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1097,19 +1075,19 @@ function StepperDemo() {
                                                                                 children: "Enable email notifications"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/app/stepper-demo/page.js",
-                                                                                lineNumber: 264,
+                                                                                lineNumber: 257,
                                                                                 columnNumber: 27
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/app/stepper-demo/page.js",
-                                                                        lineNumber: 247,
+                                                                        lineNumber: 240,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/app/stepper-demo/page.js",
-                                                                lineNumber: 225,
+                                                                lineNumber: 218,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1119,23 +1097,23 @@ function StepperDemo() {
                                                                     children: "Preferences are optional. You can proceed without selecting any."
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/stepper-demo/page.js",
-                                                                    lineNumber: 270,
+                                                                    lineNumber: 263,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/stepper-demo/page.js",
-                                                                lineNumber: 269,
+                                                                lineNumber: 262,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/stepper-demo/page.js",
-                                                        lineNumber: 223,
+                                                        lineNumber: 216,
                                                         columnNumber: 21
                                                     }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/stepper-demo/page.js",
-                                                lineNumber: 221,
+                                                lineNumber: 214,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Stepper$2f$Stepper$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].StepContent, {
@@ -1148,7 +1126,7 @@ function StepperDemo() {
                                                                 children: "Review Your Information"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/stepper-demo/page.js",
-                                                                lineNumber: 281,
+                                                                lineNumber: 274,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1161,7 +1139,7 @@ function StepperDemo() {
                                                                                 children: "Name:"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/app/stepper-demo/page.js",
-                                                                                lineNumber: 284,
+                                                                                lineNumber: 277,
                                                                                 columnNumber: 27
                                                                             }, this),
                                                                             ' ',
@@ -1170,13 +1148,13 @@ function StepperDemo() {
                                                                                 children: formData.personalInfo.name || 'Not provided'
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/app/stepper-demo/page.js",
-                                                                                lineNumber: 285,
+                                                                                lineNumber: 278,
                                                                                 columnNumber: 27
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/app/stepper-demo/page.js",
-                                                                        lineNumber: 283,
+                                                                        lineNumber: 276,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1186,7 +1164,7 @@ function StepperDemo() {
                                                                                 children: "Email:"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/app/stepper-demo/page.js",
-                                                                                lineNumber: 290,
+                                                                                lineNumber: 283,
                                                                                 columnNumber: 27
                                                                             }, this),
                                                                             ' ',
@@ -1195,13 +1173,13 @@ function StepperDemo() {
                                                                                 children: formData.personalInfo.email || 'Not provided'
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/app/stepper-demo/page.js",
-                                                                                lineNumber: 291,
+                                                                                lineNumber: 284,
                                                                                 columnNumber: 27
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/app/stepper-demo/page.js",
-                                                                        lineNumber: 289,
+                                                                        lineNumber: 282,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1211,7 +1189,7 @@ function StepperDemo() {
                                                                                 children: "Phone:"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/app/stepper-demo/page.js",
-                                                                                lineNumber: 296,
+                                                                                lineNumber: 289,
                                                                                 columnNumber: 27
                                                                             }, this),
                                                                             ' ',
@@ -1220,13 +1198,13 @@ function StepperDemo() {
                                                                                 children: formData.personalInfo.phone || 'Not provided'
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/app/stepper-demo/page.js",
-                                                                                lineNumber: 297,
+                                                                                lineNumber: 290,
                                                                                 columnNumber: 27
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/app/stepper-demo/page.js",
-                                                                        lineNumber: 295,
+                                                                        lineNumber: 288,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1236,7 +1214,7 @@ function StepperDemo() {
                                                                                 children: "Address:"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/app/stepper-demo/page.js",
-                                                                                lineNumber: 302,
+                                                                                lineNumber: 295,
                                                                                 columnNumber: 27
                                                                             }, this),
                                                                             ' ',
@@ -1245,13 +1223,13 @@ function StepperDemo() {
                                                                                 children: formData.address.street && formData.address.city ? `${formData.address.street}, ${formData.address.city}, ${formData.address.zipCode}` : 'Not provided'
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/app/stepper-demo/page.js",
-                                                                                lineNumber: 303,
+                                                                                lineNumber: 296,
                                                                                 columnNumber: 27
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/app/stepper-demo/page.js",
-                                                                        lineNumber: 301,
+                                                                        lineNumber: 294,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1261,7 +1239,7 @@ function StepperDemo() {
                                                                                 children: "Newsletter:"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/app/stepper-demo/page.js",
-                                                                                lineNumber: 310,
+                                                                                lineNumber: 303,
                                                                                 columnNumber: 27
                                                                             }, this),
                                                                             ' ',
@@ -1270,13 +1248,13 @@ function StepperDemo() {
                                                                                 children: formData.preferences.newsletter ? 'Yes' : 'No'
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/app/stepper-demo/page.js",
-                                                                                lineNumber: 311,
+                                                                                lineNumber: 304,
                                                                                 columnNumber: 27
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/app/stepper-demo/page.js",
-                                                                        lineNumber: 309,
+                                                                        lineNumber: 302,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1286,7 +1264,7 @@ function StepperDemo() {
                                                                                 children: "Notifications:"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/app/stepper-demo/page.js",
-                                                                                lineNumber: 316,
+                                                                                lineNumber: 309,
                                                                                 columnNumber: 27
                                                                             }, this),
                                                                             ' ',
@@ -1295,19 +1273,19 @@ function StepperDemo() {
                                                                                 children: formData.preferences.notifications ? 'Enabled' : 'Disabled'
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/app/stepper-demo/page.js",
-                                                                                lineNumber: 317,
+                                                                                lineNumber: 310,
                                                                                 columnNumber: 27
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/app/stepper-demo/page.js",
-                                                                        lineNumber: 315,
+                                                                        lineNumber: 308,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/app/stepper-demo/page.js",
-                                                                lineNumber: 282,
+                                                                lineNumber: 275,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1315,24 +1293,24 @@ function StepperDemo() {
                                                                 children: "Please review all information before submitting."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/stepper-demo/page.js",
-                                                                lineNumber: 322,
+                                                                lineNumber: 315,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/stepper-demo/page.js",
-                                                        lineNumber: 280,
+                                                        lineNumber: 273,
                                                         columnNumber: 21
                                                     }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/stepper-demo/page.js",
-                                                lineNumber: 278,
+                                                lineNumber: 271,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/stepper-demo/page.js",
-                                        lineNumber: 74,
+                                        lineNumber: 67,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Stepper$2f$Stepper$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].Navigation, {
@@ -1341,19 +1319,19 @@ function StepperDemo() {
                                         completeLabel: "Submit Form"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/stepper-demo/page.js",
-                                        lineNumber: 330,
+                                        lineNumber: 323,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/stepper-demo/page.js",
-                                lineNumber: 61,
+                                lineNumber: 54,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/stepper-demo/page.js",
-                        lineNumber: 57,
+                        lineNumber: 50,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1364,7 +1342,7 @@ function StepperDemo() {
                                 children: "Keyboard Navigation"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/stepper-demo/page.js",
-                                lineNumber: 340,
+                                lineNumber: 333,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -1377,14 +1355,14 @@ function StepperDemo() {
                                                 children: "Arrow Right/Down"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/stepper-demo/page.js",
-                                                lineNumber: 343,
+                                                lineNumber: 336,
                                                 columnNumber: 17
                                             }, this),
                                             " - Next step"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/stepper-demo/page.js",
-                                        lineNumber: 342,
+                                        lineNumber: 335,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -1394,14 +1372,14 @@ function StepperDemo() {
                                                 children: "Arrow Left/Up"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/stepper-demo/page.js",
-                                                lineNumber: 346,
+                                                lineNumber: 339,
                                                 columnNumber: 17
                                             }, this),
                                             " - Previous step"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/stepper-demo/page.js",
-                                        lineNumber: 345,
+                                        lineNumber: 338,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -1411,14 +1389,14 @@ function StepperDemo() {
                                                 children: "Home"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/stepper-demo/page.js",
-                                                lineNumber: 349,
+                                                lineNumber: 342,
                                                 columnNumber: 17
                                             }, this),
                                             " - Go to first step"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/stepper-demo/page.js",
-                                        lineNumber: 348,
+                                        lineNumber: 341,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -1428,14 +1406,14 @@ function StepperDemo() {
                                                 children: "End"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/stepper-demo/page.js",
-                                                lineNumber: 352,
+                                                lineNumber: 345,
                                                 columnNumber: 17
                                             }, this),
                                             " - Go to last step"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/stepper-demo/page.js",
-                                        lineNumber: 351,
+                                        lineNumber: 344,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -1445,14 +1423,14 @@ function StepperDemo() {
                                                 children: "Enter/Space"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/stepper-demo/page.js",
-                                                lineNumber: 355,
+                                                lineNumber: 348,
                                                 columnNumber: 17
                                             }, this),
                                             " - Activate step button"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/stepper-demo/page.js",
-                                        lineNumber: 354,
+                                        lineNumber: 347,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -1462,26 +1440,26 @@ function StepperDemo() {
                                                 children: "Tab"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/stepper-demo/page.js",
-                                                lineNumber: 359,
+                                                lineNumber: 352,
                                                 columnNumber: 17
                                             }, this),
                                             " - Navigate between interactive elements"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/stepper-demo/page.js",
-                                        lineNumber: 358,
+                                        lineNumber: 351,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/stepper-demo/page.js",
-                                lineNumber: 341,
+                                lineNumber: 334,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/stepper-demo/page.js",
-                        lineNumber: 339,
+                        lineNumber: 332,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1492,7 +1470,7 @@ function StepperDemo() {
                                 children: "Component Features"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/stepper-demo/page.js",
-                                lineNumber: 367,
+                                lineNumber: 360,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -1504,7 +1482,7 @@ function StepperDemo() {
                                                 children: "Compound Components:"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/stepper-demo/page.js",
-                                                lineNumber: 370,
+                                                lineNumber: 363,
                                                 columnNumber: 17
                                             }, this),
                                             " Flexible API with",
@@ -1514,7 +1492,7 @@ function StepperDemo() {
                                                 children: "<Stepper.Steps>"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/stepper-demo/page.js",
-                                                lineNumber: 371,
+                                                lineNumber: 364,
                                                 columnNumber: 17
                                             }, this),
                                             ",",
@@ -1524,14 +1502,14 @@ function StepperDemo() {
                                                 children: "<Stepper.Step>"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/stepper-demo/page.js",
-                                                lineNumber: 372,
+                                                lineNumber: 365,
                                                 columnNumber: 17
                                             }, this),
                                             ", etc."
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/stepper-demo/page.js",
-                                        lineNumber: 369,
+                                        lineNumber: 362,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -1540,14 +1518,14 @@ function StepperDemo() {
                                                 children: "Render Props:"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/stepper-demo/page.js",
-                                                lineNumber: 375,
+                                                lineNumber: 368,
                                                 columnNumber: 17
                                             }, this),
                                             " Customize step content with function children"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/stepper-demo/page.js",
-                                        lineNumber: 374,
+                                        lineNumber: 367,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -1556,14 +1534,14 @@ function StepperDemo() {
                                                 children: "No Prop Drilling:"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/stepper-demo/page.js",
-                                                lineNumber: 378,
+                                                lineNumber: 371,
                                                 columnNumber: 17
                                             }, this),
                                             " State managed via Context API"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/stepper-demo/page.js",
-                                        lineNumber: 377,
+                                        lineNumber: 370,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -1572,14 +1550,14 @@ function StepperDemo() {
                                                 children: "Full A11y:"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/stepper-demo/page.js",
-                                                lineNumber: 381,
+                                                lineNumber: 374,
                                                 columnNumber: 17
                                             }, this),
                                             " ARIA attributes, keyboard navigation, screen reader support"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/stepper-demo/page.js",
-                                        lineNumber: 380,
+                                        lineNumber: 373,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -1588,42 +1566,42 @@ function StepperDemo() {
                                                 children: "Step Validation:"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/stepper-demo/page.js",
-                                                lineNumber: 385,
+                                                lineNumber: 378,
                                                 columnNumber: 17
                                             }, this),
                                             " Control navigation based on step validity"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/stepper-demo/page.js",
-                                        lineNumber: 384,
+                                        lineNumber: 377,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/stepper-demo/page.js",
-                                lineNumber: 368,
+                                lineNumber: 361,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/stepper-demo/page.js",
-                        lineNumber: 366,
+                        lineNumber: 359,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/stepper-demo/page.js",
-                lineNumber: 48,
+                lineNumber: 41,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/app/stepper-demo/page.js",
-            lineNumber: 47,
+            lineNumber: 40,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/app/stepper-demo/page.js",
-        lineNumber: 46,
+        lineNumber: 39,
         columnNumber: 5
     }, this);
 }
