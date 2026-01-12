@@ -1,0 +1,113 @@
+<div class="container">
+  <header class="header">
+    <h1>{{ title }}</h1>
+    <p class="subtitle">Demonstrating ControlValueAccessor and Dynamic Forms</p>
+  </header>
+
+  <!-- Part 1: Simple Form with Star Rating CVA -->
+  <section class="card">
+    <h2>Part 1: Star Rating Component (CVA Implementation)</h2>
+    <p class="description">
+      This demonstrates a custom form control implementing ControlValueAccessor.
+      The star rating component integrates seamlessly with Angular Reactive Forms.
+    </p>
+
+    <form [formGroup]="exampleForm" (ngSubmit)="onSubmitExampleForm()" class="example-form">
+      <div class="form-group" [ngClass]="{
+        'ng-invalid': exampleForm.get('productName')?.invalid && exampleForm.get('productName')?.touched,
+        'ng-valid': exampleForm.get('productName')?.valid && exampleForm.get('productName')?.touched
+      }">
+        <label for="productName">
+          Product Name
+          <span class="required-indicator">*</span>
+        </label>
+        <input
+          id="productName"
+          type="text"
+          formControlName="productName"
+          placeholder="Enter product name"
+          class="form-control"
+        />
+        <span
+          *ngIf="exampleForm.get('productName')?.invalid && exampleForm.get('productName')?.touched"
+          class="error-message"
+        >
+          Product name is required
+        </span>
+      </div>
+
+      <div class="form-group" [ngClass]="{
+        'ng-invalid': exampleForm.get('rating')?.invalid && exampleForm.get('rating')?.touched,
+        'ng-valid': exampleForm.get('rating')?.valid && exampleForm.get('rating')?.touched
+      }">
+        <label>
+          Rating
+          <span class="required-indicator">*</span>
+        </label>
+        <app-star-rating
+          formControlName="rating"
+          [maxStars]="5"
+          [required]="true"
+        ></app-star-rating>
+        <span
+          *ngIf="exampleForm.get('rating')?.invalid && exampleForm.get('rating')?.touched"
+          class="error-message"
+        >
+          Please select a rating (at least 1 star)
+        </span>
+      </div>
+
+      <div class="form-group" [ngClass]="{
+        'ng-invalid': exampleForm.get('review')?.invalid && exampleForm.get('review')?.touched,
+        'ng-valid': exampleForm.get('review')?.valid && exampleForm.get('review')?.touched
+      }">
+        <label for="review">
+          Review
+          <span class="required-indicator">*</span>
+        </label>
+        <textarea
+          id="review"
+          formControlName="review"
+          placeholder="Enter your review (minimum 10 characters)"
+          rows="4"
+          class="form-control"
+        ></textarea>
+        <span
+          *ngIf="exampleForm.get('review')?.invalid && exampleForm.get('review')?.touched"
+          class="error-message"
+        >
+          Review is required and must be at least 10 characters
+        </span>
+      </div>
+
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="exampleForm.invalid"
+      >
+        Submit Review
+      </button>
+    </form>
+
+    <div *ngIf="exampleFormValue" class="form-result">
+      <h3>Form Submitted Successfully!</h3>
+      <pre>{{ exampleFormValue | json }}</pre>
+    </div>
+  </section>
+
+  <!-- Part 2: Dynamic Form Engine -->
+  <section class="card">
+    <h2>Part 2: Dynamic Form Engine</h2>
+    <p class="description">
+      This demonstrates a dynamic form engine that generates complex forms from JSON configuration.
+      The form supports nested FormGroups, FormArrays, conditional fields, and custom validation.
+    </p>
+
+    <app-dynamic-form
+      [config]="dynamicFormConfig"
+      (formSubmit)="onDynamicFormSubmit($event)"
+    ></app-dynamic-form>
+  </section>
+
+  
+</div>

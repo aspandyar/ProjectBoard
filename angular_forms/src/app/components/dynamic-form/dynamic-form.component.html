@@ -1,0 +1,377 @@
+<form [formGroup]="form" class="dynamic-form" (ngSubmit)="onSubmit()">
+  <!-- Top-level fields -->
+  <div *ngFor="let field of topLevelFields" class="form-field-wrapper">
+    <ng-container *ngIf="shouldShowField(field)">
+      <div class="form-group" [ngClass]="getControlStateClasses(getControl(field.name))">
+        <label [for]="field.name">
+          {{ field.label }}
+          <span *ngIf="field.required" class="required-indicator">*</span>
+        </label>
+
+        <!-- Text Input -->
+        <input
+          *ngIf="field.type === 'text' || field.type === 'email'"
+          [id]="field.name"
+          [type]="field.type"
+          [formControlName]="field.name"
+          [placeholder]="field.placeholder || ''"
+          class="form-control"
+        />
+
+        <!-- Number Input -->
+        <input
+          *ngIf="field.type === 'number'"
+          [id]="field.name"
+          type="number"
+          [formControlName]="field.name"
+          [placeholder]="field.placeholder || ''"
+          [min]="field.min ?? null"
+          [max]="field.max ?? null"
+          [step]="field.step"
+          class="form-control"
+        />
+
+        <!-- Textarea -->
+        <textarea
+          *ngIf="field.type === 'textarea'"
+          [id]="field.name"
+          [formControlName]="field.name"
+          [placeholder]="field.placeholder || ''"
+          [rows]="field.rows || 4"
+          class="form-control"
+        ></textarea>
+
+        <!-- Select -->
+        <select
+          *ngIf="field.type === 'select'"
+          [id]="field.name"
+          [formControlName]="field.name"
+          class="form-control"
+        >
+          <option [value]="null">{{ field.placeholder || 'Select...' }}</option>
+          <option *ngFor="let option of field.options" [value]="option.value">
+            {{ option.label }}
+          </option>
+        </select>
+
+        <!-- Checkbox -->
+        <div *ngIf="field.type === 'checkbox'" class="checkbox-wrapper">
+          <input
+            [id]="field.name"
+            type="checkbox"
+            [formControlName]="field.name"
+            class="form-checkbox"
+          />
+          <label [for]="field.name" class="checkbox-label">{{ field.label }}</label>
+        </div>
+
+        <!-- Checkbox Group (Multiple Choice) -->
+        <div *ngIf="field.type === 'checkbox-group'" class="checkbox-group-wrapper" [ngClass]="getControlStateClasses(getControl(field.name))">
+          <div class="checkbox-group-label">
+            {{ field.label }}
+            <span *ngIf="field.required" class="required-indicator">*</span>
+          </div>
+          <div class="checkbox-group-options">
+            <div *ngFor="let option of field.options; let i = index" class="checkbox-option">
+              <input
+                [id]="field.name + '_' + i"
+                type="checkbox"
+                [checked]="isCheckboxSelected(field, i)"
+                (change)="onCheckboxGroupChange(field, i, $event)"
+                [disabled]="field.disabled"
+                class="form-checkbox"
+              />
+              <label [for]="field.name + '_' + i" class="checkbox-label">{{ option.label }}</label>
+            </div>
+          </div>
+          <!-- Error Message for Checkbox Group -->
+          <span
+            *ngIf="getControl(field.name)?.invalid && getControl(field.name)?.touched"
+            class="error-message"
+          >
+            {{ getErrorMessage(field) }}
+          </span>
+        </div>
+
+        <!-- Radio Buttons -->
+        <div *ngIf="field.type === 'radio'" class="radio-group">
+          <label *ngFor="let option of field.options" class="radio-option">
+            <input
+              type="radio"
+              [name]="field.name"
+              [formControlName]="field.name"
+              [value]="option.value"
+            />
+            <span>{{ option.label }}</span>
+          </label>
+        </div>
+
+        <!-- Star Rating (Custom CVA Component) -->
+        <app-star-rating
+          *ngIf="field.type === 'star-rating'"
+          [formControlName]="field.name"
+          [maxStars]="field.max || 5"
+          [required]="field.required || false"
+        ></app-star-rating>
+
+        <!-- Date Input -->
+        <input
+          *ngIf="field.type === 'date'"
+          [id]="field.name"
+          type="date"
+          [formControlName]="field.name"
+          class="form-control"
+        />
+
+        <!-- Error Message -->
+        <span
+          *ngIf="getControl(field.name)?.invalid && getControl(field.name)?.touched"
+          class="error-message"
+        >
+          {{ getErrorMessage(field) }}
+        </span>
+      </div>
+    </ng-container>
+  </div>
+
+  <!-- Nested Form Groups -->
+  <div *ngFor="let group of groups" class="form-group-wrapper">
+    <fieldset [formGroupName]="group.name" [ngClass]="getControlStateClasses(getGroupControl(group.name))">
+      <legend *ngIf="group.label">{{ group.label }}</legend>
+
+      <div *ngFor="let field of group.fields" class="form-field-wrapper">
+        <ng-container *ngIf="shouldShowField(field)">
+          <div class="form-group" [ngClass]="getControlStateClasses(getGroupControl(group.name)?.get(field.name) ?? null)">
+            <label [for]="group.name + '_' + field.name">
+              {{ field.label }}
+              <span *ngIf="field.required" class="required-indicator">*</span>
+            </label>
+
+            <!-- Render same field types as above -->
+            <input
+              *ngIf="field.type === 'text' || field.type === 'email'"
+              [id]="group.name + '_' + field.name"
+              [type]="field.type"
+              [formControlName]="field.name"
+              [placeholder]="field.placeholder || ''"
+              class="form-control"
+            />
+
+            <input
+              *ngIf="field.type === 'number'"
+              [id]="group.name + '_' + field.name"
+              type="number"
+              [formControlName]="field.name"
+              [placeholder]="field.placeholder || ''"
+              [min]="field.min ?? null"
+              [max]="field.max ?? null"
+              [step]="field.step"
+              class="form-control"
+            />
+
+            <textarea
+              *ngIf="field.type === 'textarea'"
+              [id]="group.name + '_' + field.name"
+              [formControlName]="field.name"
+              [placeholder]="field.placeholder || ''"
+              [rows]="field.rows || 4"
+              class="form-control"
+            ></textarea>
+
+            <select
+              *ngIf="field.type === 'select'"
+              [id]="group.name + '_' + field.name"
+              [formControlName]="field.name"
+              class="form-control"
+            >
+              <option [value]="null">{{ field.placeholder || 'Select...' }}</option>
+              <option *ngFor="let option of field.options" [value]="option.value">
+                {{ option.label }}
+              </option>
+            </select>
+
+            <div *ngIf="field.type === 'checkbox'" class="checkbox-wrapper">
+              <input
+                [id]="group.name + '_' + field.name"
+                type="checkbox"
+                [formControlName]="field.name"
+                class="form-checkbox"
+              />
+              <label [for]="group.name + '_' + field.name" class="checkbox-label">{{ field.label }}</label>
+            </div>
+
+            <!-- Checkbox Group (Multiple Choice) in Nested Groups -->
+            <div *ngIf="field.type === 'checkbox-group'" class="checkbox-group-wrapper" [ngClass]="getControlStateClasses(getGroupControl(group.name)?.get(field.name) ?? null)">
+              <div class="checkbox-group-label">
+                {{ field.label }}
+                <span *ngIf="field.required" class="required-indicator">*</span>
+              </div>
+              <div class="checkbox-group-options">
+                <div *ngFor="let option of field.options; let i = index" class="checkbox-option">
+                  <input
+                    [id]="group.name + '_' + field.name + '_' + i"
+                    type="checkbox"
+                    [checked]="isCheckboxSelected(field, i, group.name)"
+                    (change)="onCheckboxGroupChange(field, i, $event, group.name)"
+                    [disabled]="field.disabled"
+                    class="form-checkbox"
+                  />
+                  <label [for]="group.name + '_' + field.name + '_' + i" class="checkbox-label">{{ option.label }}</label>
+                </div>
+              </div>
+              <!-- Error Message for Checkbox Group in Nested Groups -->
+              <span
+                *ngIf="getGroupControl(group.name)?.get(field.name)?.invalid && getGroupControl(group.name)?.get(field.name)?.touched"
+                class="error-message"
+              >
+                {{ getErrorMessage(field, group.name) }}
+              </span>
+            </div>
+
+            <div *ngIf="field.type === 'radio'" class="radio-group">
+              <label *ngFor="let option of field.options" class="radio-option">
+                <input
+                  type="radio"
+                  [name]="group.name + '_' + field.name"
+                  [formControlName]="field.name"
+                  [value]="option.value"
+                />
+                <span>{{ option.label }}</span>
+              </label>
+            </div>
+
+            <app-star-rating
+              *ngIf="field.type === 'star-rating'"
+              [formControlName]="field.name"
+              [maxStars]="field.max || 5"
+              [required]="field.required || false"
+            ></app-star-rating>
+
+            <input
+              *ngIf="field.type === 'date'"
+              [id]="group.name + '_' + field.name"
+              type="date"
+              [formControlName]="field.name"
+              class="form-control"
+            />
+
+            <span
+              *ngIf="getGroupControl(group.name)?.get(field.name)?.invalid && getGroupControl(group.name)?.get(field.name)?.touched"
+              class="error-message"
+            >
+              {{ getErrorMessage(field) }}
+            </span>
+          </div>
+        </ng-container>
+      </div>
+    </fieldset>
+  </div>
+
+  <!-- Form Arrays -->
+  <div *ngFor="let arrayConfig of arrays" class="form-array-wrapper">
+    <div class="form-array-header">
+      <h3 *ngIf="arrayConfig.label">{{ arrayConfig.label }}</h3>
+      <button
+        type="button"
+        class="btn btn-secondary"
+        (click)="addArrayItem(arrayConfig.name)"
+        [disabled]="arrayConfig.maxItems && getArrayControl(arrayConfig.name)?.length >= arrayConfig.maxItems"
+      >
+        Add {{ arrayConfig.label || 'Item' }}
+      </button>
+    </div>
+
+    <div formArrayName="{{ arrayConfig.name }}" class="form-array-items">
+      <div
+        *ngFor="let item of getArrayControl(arrayConfig.name)?.controls; let i = index"
+        class="form-array-item"
+        [formGroupName]="i"
+      >
+        <div class="form-array-item-header">
+          <h4>{{ arrayConfig.label || 'Item' }} {{ i + 1 }}</h4>
+          <button
+            type="button"
+            class="btn btn-danger btn-sm"
+            (click)="removeArrayItem(arrayConfig.name, i)"
+            [disabled]="arrayConfig.minItems && getArrayControl(arrayConfig.name)?.length <= arrayConfig.minItems"
+          >
+            Remove
+          </button>
+        </div>
+
+        <div *ngFor="let field of arrayConfig.groupConfig.fields" class="form-group">
+          <label [for]="arrayConfig.name + '_' + i + '_' + field.name">
+            {{ field.label }}
+            <span *ngIf="field.required" class="required-indicator">*</span>
+          </label>
+
+          <input
+            *ngIf="field.type === 'text' || field.type === 'email'"
+            [id]="arrayConfig.name + '_' + i + '_' + field.name"
+            [type]="field.type"
+            [formControlName]="field.name"
+            [placeholder]="field.placeholder || ''"
+            class="form-control"
+          />
+
+          <input
+            *ngIf="field.type === 'number'"
+            [id]="arrayConfig.name + '_' + i + '_' + field.name"
+            type="number"
+            [formControlName]="field.name"
+            [placeholder]="field.placeholder || ''"
+            [min]="field.min ?? null"
+            [max]="field.max ?? null"
+            [step]="field.step"
+            class="form-control"
+          />
+
+          <textarea
+            *ngIf="field.type === 'textarea'"
+            [id]="arrayConfig.name + '_' + i + '_' + field.name"
+            [formControlName]="field.name"
+            [placeholder]="field.placeholder || ''"
+            [rows]="field.rows || 4"
+            class="form-control"
+          ></textarea>
+
+          <select
+            *ngIf="field.type === 'select'"
+            [id]="arrayConfig.name + '_' + i + '_' + field.name"
+            [formControlName]="field.name"
+            class="form-control"
+          >
+            <option [value]="null">{{ field.placeholder || 'Select...' }}</option>
+            <option *ngFor="let option of field.options" [value]="option.value">
+              {{ option.label }}
+            </option>
+          </select>
+
+          <app-star-rating
+            *ngIf="field.type === 'star-rating'"
+            [formControlName]="field.name"
+            [maxStars]="field.max || 5"
+            [required]="field.required || false"
+          ></app-star-rating>
+
+          <span
+            *ngIf="getArrayControl(arrayConfig.name)?.at(i)?.get(field.name)?.invalid && getArrayControl(arrayConfig.name)?.at(i)?.get(field.name)?.touched"
+            class="error-message"
+          >
+            {{ getErrorMessage(field) }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <button
+      type="submit"
+      class="btn btn-primary"
+      [disabled]="form.invalid"
+    >
+      Submit Form
+    </button>
+  </div>
+</form>
