@@ -1,0 +1,95 @@
+.star-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+
+  &.touched {
+    // Visual feedback when touched
+  }
+
+  &.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.star {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  font-size: 2rem;
+  line-height: 1;
+  transition: transform 0.1s ease, color 0.2s ease;
+  color: #ddd;
+  outline: none;
+
+  &:hover:not(:disabled) {
+    transform: scale(1.1);
+  }
+
+  &:focus-visible {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  .star-icon {
+    display: block;
+  }
+
+  &.filled {
+    color: #ffc107;
+  }
+
+  &.hovered {
+    color: #ffd54f;
+  }
+
+  &.empty {
+    color: #ddd;
+  }
+}
+
+.rating-label {
+  font-size: 0.875rem;
+  color: #666;
+  font-weight: 500;
+  margin-left: 0.5rem;
+}
+
+// Form state styling (when used in forms)
+:host-context(.ng-invalid.ng-touched) .star-rating {
+  border: 2px solid #dc3545;
+  border-radius: 4px;
+  padding: 0.25rem;
+}
+
+:host-context(.ng-valid.ng-touched) .star-rating {
+  border: 2px solid #28a745;
+  border-radius: 4px;
+  padding: 0.25rem;
+}
+
+:host-context(.ng-pending) .star-rating {
+  opacity: 0.7;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 4px;
+  }
+}

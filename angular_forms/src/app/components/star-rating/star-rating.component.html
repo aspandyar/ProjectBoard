@@ -1,0 +1,23 @@
+<div 
+  class="star-rating"
+  [class.disabled]="disabled"
+  [class.touched]="touched"
+  (mouseleave)="onMouseLeave()">
+  <button
+    *ngFor="let star of stars; let i = index"
+    type="button"
+    class="star"
+    [class.filled]="getStarState(star) === 'filled'"
+    [class.hovered]="getStarState(star) === 'hovered'"
+    [class.empty]="getStarState(star) === 'empty'"
+    [disabled]="disabled"
+    [attr.aria-label]="'Rate ' + star + ' out of ' + maxStars + ' stars'"
+    [attr.aria-pressed]="value === star"
+    (click)="onStarClick(star)"
+    (mouseenter)="onStarHover(star)">
+    <span class="star-icon">★</span>
+  </button>
+  <span *ngIf="showLabels && value !== null" class="rating-label">
+    {{ value }} / {{ maxStars }}
+  </span>
+</div>
