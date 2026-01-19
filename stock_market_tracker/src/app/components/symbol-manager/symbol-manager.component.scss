@@ -1,0 +1,120 @@
+.symbol-manager {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+  }
+
+  .add-symbol-section {
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #f0f0f0;
+
+    .input-group {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+
+      .symbol-input {
+        flex: 1;
+        padding: 12px;
+        border: 2px solid #e0e0e0;
+        border-radius: 6px;
+        font-size: 1rem;
+        text-transform: uppercase;
+        transition: border-color 0.3s;
+
+        &:focus {
+          outline: none;
+          border-color: #667eea;
+        }
+
+        &.ng-invalid.ng-touched {
+          border-color: #ff4444;
+        }
+      }
+
+      .add-btn {
+        padding: 12px 24px;
+        background: #667eea;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.3s;
+
+        &:hover:not(:disabled) {
+          background: #5568d3;
+        }
+
+        &:disabled {
+          background: #ccc;
+          cursor: not-allowed;
+        }
+      }
+    }
+
+    .error-message {
+      color: #ff4444;
+      font-size: 0.9rem;
+      margin-top: 5px;
+    }
+  }
+
+  .selected-symbols {
+    h3 {
+      color: #333;
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+    }
+
+    .symbols-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+
+      .symbol-tag {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background: #667eea;
+        color: white;
+        padding: 8px 12px;
+        border-radius: 6px;
+        font-weight: 600;
+
+        .remove-btn {
+          background: rgba(255, 255, 255, 0.3);
+          border: none;
+          color: white;
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+          cursor: pointer;
+          font-size: 1.2rem;
+          line-height: 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: background 0.3s;
+
+          &:hover {
+            background: rgba(255, 255, 255, 0.5);
+          }
+        }
+      }
+
+      .no-symbols {
+        color: #666;
+        font-style: italic;
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+<div class="symbol-manager">
+  <h2>Manage Tracked Symbols</h2>
+  
+  <div class="add-symbol-section">
+    <div class="input-group">
+      <input
+        type="text"
+        [formControl]="symbolControl"
+        placeholder="Enter stock symbol (e.g., AAPL)"
+        class="symbol-input"
+        (keyup.enter)="addSymbol()"
+        maxlength="5"
+      />
+      <button 
+        (click)="addSymbol()" 
+        [disabled]="symbolControl.invalid"
+        class="add-btn">
+        Add Symbol
+      </button>
+    </div>
+    <div *ngIf="symbolControl.invalid && symbolControl.touched" class="error-message">
+      {{ getErrorMessage() }}
+    </div>
+  </div>
+
+  <div class="selected-symbols">
+    <h3>Currently Tracking:</h3>
+    <div class="symbols-list" *ngIf="selectedSymbols$ | async as symbols">
+      <div *ngFor="let symbol of symbols" class="symbol-tag">
+        <span>{{ symbol }}</span>
+        <button 
+          (click)="removeSymbol(symbol)" 
+          class="remove-btn"
+          [attr.aria-label]="'Remove ' + symbol">
+          ×
+        </button>
+      </div>
+      <div *ngIf="symbols.length === 0" class="no-symbols">
+        No symbols tracked. Add one above.
+      </div>
+    </div>
+  </div>
+</div>

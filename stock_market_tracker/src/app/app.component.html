@@ -1,0 +1,22 @@
+<div class="container">
+  <header class="header">
+    <h1>Stock Market Tracker</h1>
+    <p class="subtitle">Real-time stock prices with reactive state management</p>
+  </header>
+
+  <!-- Loading State -->
+  <div *ngIf="loading$ | async" class="loading">
+    <div class="spinner"></div>
+    <p>Loading stock data...</p>
+  </div>
+
+  <!-- Error State -->
+  <div *ngIf="error$ | async as error" class="error">
+    <strong>Error:</strong> {{ error }}
+    <button (click)="retry()" class="retry-btn">Retry</button>
+  </div>
+
+  <!-- Main Content -->
+  <app-stock-list></app-stock-list>
+  <app-symbol-manager></app-symbol-manager>
+</div>

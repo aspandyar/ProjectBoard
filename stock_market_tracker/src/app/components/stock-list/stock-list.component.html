@@ -1,0 +1,43 @@
+<div class="stock-list">
+  <div class="header-section">
+    <h2>Tracked Stocks</h2>
+    <div class="last-update" *ngIf="lastUpdate$ | async as timestamp">
+      Last updated: {{ formatTime(timestamp) }}
+    </div>
+  </div>
+
+  <div class="stocks-grid" *ngIf="stocks$ | async as stocks; else noStocks">
+    <div 
+      *ngFor="let stock of stocks" 
+      class="stock-card"
+      [class.error-state]="stock.price === 0 && stock.volume === 0">
+      <div class="stock-header">
+        <h3 class="symbol">{{ stock.symbol }}</h3>
+        <span class="price" [ngClass]="getChangeClass(stock.change)">
+          ${{ stock.price.toFixed(2) }}
+        </span>
+      </div>
+      
+      <div class="stock-details">
+        <div class="change" [ngClass]="getChangeClass(stock.change)">
+          <span class="arrow">{{ stock.change >= 0 ? '↑' : '↓' }}</span>
+          {{ stock.change >= 0 ? '+' : '' }}{{ stock.change.toFixed(2) }}
+          ({{ stock.changePercent >= 0 ? '+' : '' }}{{ stock.changePercent.toFixed(2) }}%)
+        </div>
+        <div class="volume">
+          Volume: {{ stock.volume.toLocaleString() }}
+        </div>
+      </div>
+
+      <div *ngIf="stock.price === 0 && stock.volume === 0" class="error-badge">
+        Data unavailable
+      </div>
+    </div>
+  </div>
+
+  <ng-template #noStocks>
+    <div class="no-stocks">
+      <p>No stocks to display. Add symbols to track.</p>
+    </div>
+  </ng-template>
+</div>
