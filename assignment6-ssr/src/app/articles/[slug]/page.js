@@ -55,19 +55,6 @@ export default async function ArticlePage({ params }) {
       </header>
       <div className="article-content">
         <p>{article.content}</p>
-        {/* Inline content image — fixed dimensions */}
-        {article.contentImage && (
-          <div className="article-inline-image" style={{ position: 'relative', height: 360 }}>
-            <Image
-              src={article.contentImage}
-              alt=""
-              fill
-              sizes="(max-width: 768px) 100vw, 720px"
-              style={{ objectFit: 'cover' }}
-              loading="lazy"
-            />
-          </div>
-        )}
         <p>
           Server-Side Rendering ensures this content is in the initial HTML for SEO and fast First
           Contentful Paint. Images use next/image for automatic optimization and no layout shift.

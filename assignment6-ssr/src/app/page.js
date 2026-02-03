@@ -1,17 +1,11 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import {
-  ARTICLES,
-  HERO_IMAGE,
-  GALLERY_IMAGES,
-  STATS,
-} from '@/data/articles';
+import { ARTICLES, HERO_IMAGE, STATS } from '@/data/articles';
 
 export default function Home() {
   const featured = ARTICLES.slice(0, 3);
   return (
     <>
-      {/* LCP candidate: hero image — use priority and fixed dimensions */}
       <section className="hero-banner">
         <div className="hero-image-wrap">
           <Image
@@ -31,7 +25,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stats: no images, stable layout */}
       <section className="stats-section">
         <div className="stats-grid">
           {STATS.map((s) => (
@@ -43,7 +36,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured articles with thumbnails — fixed height to avoid CLS */}
       <section className="featured">
         <h2>Featured Articles</h2>
         <ul className="article-grid">
@@ -71,26 +63,6 @@ export default function Home() {
         <Link href="/articles" className="btn">
           View all articles
         </Link>
-      </section>
-
-      {/* Gallery: 6 images in grid — always set dimensions to avoid CLS */}
-      <section className="gallery-section">
-        <h2>From the blog</h2>
-        <div className="gallery-grid">
-          {GALLERY_IMAGES.map((img) => (
-            <div key={img.id} className="gallery-item">
-              <Image
-                src={img.src}
-                alt={img.alt}
-                width={400}
-                height={300}
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                loading="lazy"
-                className="gallery-img"
-              />
-            </div>
-          ))}
-        </div>
       </section>
     </>
   );

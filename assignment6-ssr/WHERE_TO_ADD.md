@@ -1,49 +1,30 @@
 # Where to Add Images and Other Enhancements
 
-This guide explains **where** to add images and other content so the SSR app stays Lighthouse 90+ and hydration-safe.
+Only **3–4 images**, loaded **by path** from `public/`. All paths are in one place in `src/data/articles.js`.
 
 ---
 
-## 1. Where to Add Images
+## 1. Where to Add Images (3–4 only, by path)
 
-### Home page (`src/app/page.js`)
+**All image paths are at the top of `src/data/articles.js`.** Files live in `public/` and are served at `/filename`.
 
-| Location | Purpose | How to add |
-|----------|---------|------------|
-| **Hero banner** | LCP (Largest Contentful Paint) — above the fold | Use `next/image` with `priority`, fixed container height (e.g. `height: 320px`), and `sizes="(max-width: 768px) 100vw, 1200px"`. Add URL to `HERO_IMAGE` in `src/data/articles.js`. |
-| **Featured article cards** | Thumbnails | Use `next/image` with `fill`, container with `aspect-ratio: 2/1` (or fixed height). Add `image` to each article in `src/data/articles.js`. |
-| **Gallery section** | “From the blog” grid | Use `next/image` with explicit `width={400}` and `height={300}` (or `fill` + fixed container). Add entries to `GALLERY_IMAGES` in `src/data/articles.js`. |
+```js
+export const IMAGE_1 = '/image.png';           // hero
+export const IMAGE_2 = '/image copy.png';      // articles / cards
+export const IMAGE_3 = '/image copy 2.png';
+export const IMAGE_4 = '/image copy 3.png';
+```
 
-**Rule:** Always give images a **fixed size** (wrapper with height/aspect-ratio or width/height) to avoid CLS.
+- **SPA:** Put files in `assignment6-spa/public/`.
+- **SSR:** Put the same files in `assignment6-ssr/public/` (or copy from SPA).
 
-### Articles list (`src/app/articles/page.js`)
+To add or change an image: put the file in `public/` and set the path in `IMAGE_1`–`IMAGE_4` (e.g. `'/my-photo.jpg'`).
 
-| Location | Purpose | How to add |
-|----------|---------|------------|
-| **Each card thumbnail** | Card image | Same as featured cards: `next/image` + `fill` + container with `aspect-ratio: 2/1`. Image URL comes from `article.image` in `src/data/articles.js`. |
+**Rule:** Always give images a fixed size (wrapper height/aspect-ratio or width/height) to avoid CLS.
 
-### Article detail (`src/app/articles/[slug]/page.js`)
+---
 
-| Location | Purpose | How to add |
-|----------|---------|------------|
-| **Hero image** | LCP on direct visit | `next/image` with `priority`, container `height: 320`. Use `article.image` from data. |
-| **Inline content image** | Body image | Optional `contentImage` in data; render with fixed height (e.g. 360px) and `next/image` + `fill`. |
-| **Related articles** | Thumbnails | Same pattern as featured cards; data from `getRelatedArticles()`. |
-
-### About page (`src/app/about/page.js`)
-
-| Location | Purpose | How to add |
-|----------|---------|------------|
-| **Team avatars** | Team section | Use `next/image` with `width={200}` and `height={200}`. Add/edit `TEAM` in `src/data/articles.js` (each item has `image`, `name`, `role`). |
-
-### Adding a new image elsewhere
-
-1. **Data:** Add the URL in `src/data/articles.js` (or a new data file).
-2. **Component:** Use `next/image` with either:
-   - `fill` + a wrapper with `position: relative` and fixed **height** (or aspect-ratio), or  
-   - Explicit `width` and `height`.
-3. **CLS:** Never render an image without a reserved space (no unsized `<Image>`).
-4. **Remote images:** Add the host to `next.config.mjs` → `images.remotePatterns`.
+**Hydration and Lighthouse:** See **`HYDRATION_AND_LIGHTHOUSE.md`** for how to use hydration and run Lighthouse in this project.
 
 ---
 

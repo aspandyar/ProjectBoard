@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { TEAM, STATS } from '@/data/articles';
 
 export const metadata = {
@@ -27,22 +26,11 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team: fixed-size avatars to avoid CLS */}
       <section className="team-section">
         <h2>Our team</h2>
         <div className="team-grid">
           {TEAM.map((member) => (
             <div key={member.id} className="team-card">
-              <div className="team-avatar">
-                <Image
-                  src={member.image}
-                  alt={member.name}
-                  width={200}
-                  height={200}
-                  sizes="200px"
-                  loading="lazy"
-                />
-              </div>
               <h3>{member.name}</h3>
               <p>{member.role}</p>
             </div>
