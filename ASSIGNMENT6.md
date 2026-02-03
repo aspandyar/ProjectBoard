@@ -42,10 +42,8 @@ cd assignment6-ssr && npm install && npm run dev
 
 ## Where to add images and other things
 
-See **`assignment6-ssr/WHERE_TO_ADD.md`** for:
-- Where to add images (hero, cards, gallery, article detail, about/team).
-- Where to add fonts, API routes, new pages.
-- Hydration-safe patterns and Lighthouse 90+ checklist.
+- **`assignment6-ssr/WHERE_TO_ADD.md`** — Where to add images (by path in `public/`), fonts, API routes, new pages.
+- **`assignment6-ssr/HYDRATION_AND_LIGHTHOUSE.md`** — How to use **Hydration** and **Lighthouse** in this project (images by path, avoiding hydration errors, running Lighthouse for Performance 90+).
 
 ## Grading alignment
 
