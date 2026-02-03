@@ -25,15 +25,6 @@ export default function About() {
         <div className="team-grid">
           {TEAM.map((member) => (
             <div key={member.id} className="team-card">
-              <div className="team-avatar">
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  width={200}
-                  height={200}
-                  loading="lazy"
-                />
-              </div>
               <h3>{member.name}</h3>
               <p>{member.role}</p>
             </div>

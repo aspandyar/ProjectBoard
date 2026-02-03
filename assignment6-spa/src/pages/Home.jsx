@@ -1,10 +1,5 @@
 import { Link } from 'react-router-dom';
-import {
-  ARTICLES,
-  HERO_IMAGE,
-  GALLERY_IMAGES,
-  STATS,
-} from '../data/articles';
+import { ARTICLES, HERO_IMAGE, STATS } from '../data/articles';
 
 export default function Home() {
   const featured = ARTICLES.slice(0, 3);
@@ -58,24 +53,6 @@ export default function Home() {
           ))}
         </ul>
         <Link to="/articles" className="btn">View all articles</Link>
-      </section>
-
-      <section className="gallery-section">
-        <h2>From the blog</h2>
-        <div className="gallery-grid">
-          {GALLERY_IMAGES.map((img) => (
-            <div key={img.id} className="gallery-item">
-              <img
-                src={img.src}
-                alt={img.alt}
-                width={400}
-                height={300}
-                loading="lazy"
-                className="gallery-img"
-              />
-            </div>
-          ))}
-        </div>
       </section>
     </>
   );

@@ -36,17 +36,6 @@ export default function Article() {
       </header>
       <div className="article-content">
         <p>{article.content}</p>
-        {article.contentImage && (
-          <div className="article-inline-image">
-            <img
-              src={article.contentImage}
-              alt=""
-              width={720}
-              height={360}
-              loading="lazy"
-            />
-          </div>
-        )}
         <p>
           Server-Side Rendering ensures this content is in the initial HTML for SEO and fast First
           Contentful Paint. Images use next/image for automatic optimization and no layout shift.
